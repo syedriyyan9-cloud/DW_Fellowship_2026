@@ -1,0 +1,59 @@
+These are the notes that I took while taking the DSA introductory session from dev weekends as task.
+
+<==========================> NOTES START FROM HERE <==========================>
+
+1. Introduction
+
+Data Structures and Algorithms (DSA) is the basic building block for solving problems in software engineering
+
+2. What is DSA? (Foundations of Data Structures and Algorithms)
+
+DSA stands for Data Structures and Algorithms. Data structures are ways to organize info, like using an array or a tree, while algorithms are the step-by-step instructions used to solve a problem. Together, they allow you to perform operations like searching or sorting data efficiently.
+
+3. Developer vs. Engineer Mindset
+
+While developers focus on tools like React to build features fast, they often struggle with how systems scale. Engineers use DSA to plan for performance and edge cases, ensuring the system stays strong as more people use it.
+
+4. Why Learn DSA?
+
+Practicing DSA helps you develop a systematic mindset and the confidence that every problem has a solution. It is also the main way top companies test your logic and aptitude during job interviews.
+
+5. DSA in the Industry
+
+Real-world tech uses DSA everywhere, such as Google Maps using graphs for directions and browsers using tree structures to show web pages. It is vital for scalability, helping apps work smoothly for millions of users instead of crashing
+
+6. Power of Graphs
+
+Graphs connect different things, like roads or people, to show how they are related. Google Maps uses them to find the fastest path to your house, while Facebook uses them to suggest new friends
+ 
+7. Power of Trees 
+
+Trees organize information in a clear hierarchy, much like a family tree. They are used by web browsers to structure the parts of a web page and by computers to organize folders and files
+
+8. Power of Queues 
+
+Queues follow a "first-come, first-served" rule to handle tasks in the correct order. They are used to manage background jobs, such as sending out millions of emails smoothly without crashing the system
+
+9. Scalability 
+
+A bad algorithm might work for 100 users but crash when a million people visit a site at once. Scalability is about using DSA to find and fix performance bottlenecks before they happen in the real world
+
+10. DSA in the Age of AI
+
+AI tools like ChatGPT are great at writing basic code and syntax for you. However, AI doesn’t know your specific system's limits, such as your database constraints or server memory. You still need deep knowledge to guide AI and ask it for the right optimizations
+
+11. Validating and Evaluating AI's Output
+
+You cannot blindly copy-paste code from AI because it might not be the most efficient solution. You must be able to check its time complexity and decide if the logic truly fits your needs. Critical thinking, built by practicing DSA, is necessary to judge if AI’s output is actually good
+
+12. Shift in Hiring 
+
+Companies still use DSA to test your logic, but they now hire you to prove you can validate and improve what an AI produces. While they might accept slightly less mastery of syntax, they still need to see you can think like an engineer. For junior roles, it remains the best way to test your foundational logic and aptitude
+
+13. DSA is a Marathon, not a Sprint
+
+Learning DSA is a long journey, not a quick race, and it is completely normal to struggle or feel overwhelmed. Everyone gets stuck at some point, and seeing others move faster is just a natural part of the learning process. Overcoming these difficult moments is exactly how you build a strong engineering mindset
+
+14. The Power of Patterns
+
+Instead of trying to memorize hundreds of different problems, you should focus on learning reusable patterns. A single pattern, like "Two Pointers," can be used to solve dozens of different-looking coding tasks. Recognizing specific keywords in a problem helps you pick the right pattern to solve it efficiently
