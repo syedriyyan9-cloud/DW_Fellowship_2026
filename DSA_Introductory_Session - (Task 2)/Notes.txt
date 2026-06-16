@@ -1,4 +1,4 @@
-These are the notes that I took while taking the DSA introductory session from dev weekends as task.
+These are the notes that I took while taking the DSA introductory session from dev weekends as task#2.
 
 <==========================> NOTES START FROM HERE <==========================>
 
@@ -57,3 +57,61 @@ Learning DSA is a long journey, not a quick race, and it is completely normal to
 14. The Power of Patterns
 
 Instead of trying to memorize hundreds of different problems, you should focus on learning reusable patterns. A single pattern, like "Two Pointers," can be used to solve dozens of different-looking coding tasks. Recognizing specific keywords in a problem helps you pick the right pattern to solve it efficiently
+
+15. Pattern Landscapes 
+
+Arrays, Strings, Searching, Sorting, etc.
+Different data structures, like arrays or strings, have specific patterns used to solve common problems. Examples include using "Two Pointers" for arrays or "Binary Search" for searching tasks. These categories help you navigate and solve a wide variety of coding challenges
+
+16. Keyword Signals
+
+Problems contain hidden clues, such as the word "sorted" suggesting Two Pointers or "subarray" hinting at a Sliding Window approach. Constraints, like the size of the input, help you rule out slow methods and pick the most efficient pattern
+
+17. Learn one, solve many
+
+This effect means that learning a single pattern, like Two Pointers, allows you to solve dozens of different-looking problems. It focuses on reusing one core idea for various tasks, such as reversing strings or finding sums, instead of memorising every solution
+
+18. How To Pick A Pattern
+
+Understand input and identify output.
+Know the constraints.
+Think about solution First no matter time and space complexity, then optimize it.
+Match to a problem that you might have solved before.
+Check if the conditions are valid for pattern.
+
+19. Approach To Solve the problem
+
+50% Problem Understanding (what statements mean)
+25% Algorithm/Logic (draft approach before coding)
+15% Code (code the approach, language does not matter)
+10% Dry Running (testing logic with problems manually)
+
+20. Best Practices
+
+Learn Patterns before solving any problem.
+Time Management (30–45 minutes per problem).
+Pacing (see the solution if you cannot reach a solution after 30 - 45 minutes)
+Breadth over Depth (solve only 5 to 10 problems per topic)
+
+21. Checking Prerequisites
+
+You shouldn't jump into hard topics like graphs or trees without understanding the basic theory first. Before you try to solve problems about counting items, you must first study how hashmaps and hash sets work. If you want to learn recursion, you need to fully understand how the call stack works in your computer
+
+
+22. Session Schedule and Resources:
+
+4 sessions uploaded per week on youtube on monday, tuesday, wednesday and thrusday
+Dev Weekends GitHub Repository (must explore and use this for problem solving)
+
+23. Prerequisites
+
+Langugae does not matter, PF is necessary, Time and Space Complexity are a must.
+Practice on leetcode or other platforms
+
+24. Notion Template & Note-taking
+
+Add mistakes that you make so that you can avoid them later on.
+Language Related problems to be noted in language related file.
+Pattern specific coding template contains which problems can be solved using which pattern. 
+Mind map template should include which specific pattern was used to solve problems, then we can analyze it to see what conditions satisfy which patterns.
+In the lowest template add problems, first add heading, its link, define difficulty level, status, the patterns that was used, time taken to solve the pattern. Add things I struggle with to struggle section. Add solution with english explanation. 
