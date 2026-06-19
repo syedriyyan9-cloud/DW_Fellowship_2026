@@ -1,0 +1,47 @@
+Arrays and the Character Type:
+
+An array is a structure that holds many values of the same type in a row within the computer's memory. 
+While an integer takes up four (4) bytes, the character (char) type is smaller and takes up only 1 byte (8 bits) of memory. 
+Because characters are stored in contiguous (continuous) memory, each character in an array sits exactly one byte away from the next one. 
+When declaring a character, it is written in single quotation marks, such as char grade = 'A';.
+
+Every Character is a Number:
+
+Inside a computer, every character is actually stored as a number using a system called ASCII. 
+The sources list several key values that are important to remember: capital 'A' is 65, small 'a' is 97, and the digit '0' is 48. 
+There is a constant difference of 32 between the numeric values of uppercase and lowercase versions of the same letter. 
+This numeric system allows programmers to perform math on characters, which is a very important concept for solving coding problems.
+
+A String is an Array of Characters:
+
+In C++, a string is defined as an array of characters that follows one specific rule: it must end with a special character called the null terminator. 
+This means that if a word has n visible letters, the array actually needs n+1 slots to store it. 
+For example, the word "college" has seven letters but occupies eight spots in memory because the computer automatically adds the extra null character at the very end.
+
+Long Way vs. Short Way:
+
+There are two main ways to work with strings: the manual "long way" and the efficient "short way". 
+The long way involves using a loop (like a for or while loop) to go through each character one at a time, which is useful for seeing exactly how the computer handles the data "under the hood". 
+The short way is a one-line method where you simply use a command like cout << name; to print the entire string at once without needing to write a manual loop.
+
+The Stop Sign:
+
+The null terminator, written as \0, acts as a "stop sign" for the computer. 
+It tells the program exactly where a string ends, no matter how large the total array size might be. 
+Without this stop sign, a computer would not know when to stop reading and might continue printing random characters from memory until it happens to find a null operator by chance. 
+Although this character is invisible when you print a string, it is always present at the end of the character array to prevent these types of errors.
+
+Size, Length and Wrong Sizes:
+
+In C++, the size of a string refers to the total number of memory slots it occupies, which is always the number of visible characters plus one for the invisible null terminator. 
+The length of a string is the count of only the visible characters and can be found using built-in functions that exclude the null terminator from the total. 
+For example, the word "college" has a length of seven but a size of eight because of that extra hidden slot. 
+A common mistake, or wrong size, occurs when a programmer forgets to account for this extra n+1 slot, which is necessary because the computer automatically adds the null terminator 
+to mark the end of the data.
+
+Reading in C++:
+
+When taking input from a user, the standard "cin" command is often used for simple words, but it has a major limitation: it stops reading as soon as it encounters a space. 
+This means if a user enters a full name, the program will only capture the first part and ignore everything after the space. 
+To solve this problem, you should use the "getline" function, which reads the entire line of text until the user presses the Enter key. 
+Using getline is the "rule of thumb" whenever you expect that the input might contain spaces, as it ensures the program captures the complete data.
