@@ -1,1 +1,9 @@
 https://github.com/devweekends/DW-Fellowship-DSA-Roadmap/tree/main/Level%200/1%20Simulation%20-%20Strings
+
+Remaining problems:
+
+Reverse Vowels of a String
+Repeated Substring Pattern
+Isomorphic Strings
+Is Subsequence
+Rotate String
