@@ -1,0 +1,14 @@
+https://github.com/devweekends/DW-Fellowship-DSA-Roadmap/tree/main/Level%200/2%20Hashmaps
+
+Remaining problems:
+
+Find Words That Can Be Formed by Characters
+Check If the Sentence Is Pangram
+Increasing Decreasing String
+Sort the People
+Find Common Elements Between Two Arrays
+Unique Number of Occurrences
+Sort Characters by Frequency
+Majority Element
+Majority Element II
+Group Anagrams
