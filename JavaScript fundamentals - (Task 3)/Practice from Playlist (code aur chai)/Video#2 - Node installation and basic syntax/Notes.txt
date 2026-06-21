@@ -1,0 +1,2 @@
+Learned what is node js and how to install it. 
+also learned how to run js directly in terminal using node <filename>

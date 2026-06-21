@@ -1,0 +1,3 @@
+Video talked about how to setup git and github repository
+also talked about codespaces and how to use them.
+I already know how to use git, github and codespaces.

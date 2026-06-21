@@ -1,0 +1,25 @@
+
+The JS of past few years and today are different.
+The statement "use strict" is used to tell JS that we are using newer version of JS.
+Even if the statement is not written the JS by default uses the above statement.
+
+Using "alert()" function in node.js would give you an error as node.js does not run this function
+However the "alert()" function would run on browser's console as the document (JS engine) inside browser can run this function.
+
+JS original documentation can be found on "tc39" website, however throughout this course we would be using MDN documentation of JS.
+
+JS has a few datatypes that can be used to categorize the input:
+
+1) Strings => uses double quotes around the value
+2) Number => any digit not surrounded by quotes
+3) booleans => mean either True or False
+4) null => standalone value that is equivalent to None in Python
+5) undefined => any variable that does not have a value assigned to it.
+6) symbol => usually used for uniquness
+7) object => user defines it 
+
+Datatypes from 1 to 6 are all primitive datatypes.
+
+We can use "typeof()" function to check the datatype of a variable.
+when using "typeof()" function to check for "null" datatype we would get an object, this is sometimes called the flaw of the language or strength of the language.
+Using "undefined" with "typeof()" would result in "undefined" as output

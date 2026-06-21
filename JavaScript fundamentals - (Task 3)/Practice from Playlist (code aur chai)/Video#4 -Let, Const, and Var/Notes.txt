@@ -1,0 +1,9 @@
+"let" and "var" are used to declare variables in JS.
+"const" is used to declare constants in JS.
+name of the variable is the name given to memory which we are using to store the value.
+if we do not give value to a variable that we have declared then it is considered as "undefined" by JS.
+constants cannot be changed in JS.
+variables can be declared without using "let" or "var" keywords, however this practice is discouraged in JS.
+use of "var" is also discouraged as it has a problem, which is that variables declared using "var" keyword do not follow scope rules.
+use "//" for single line comments.
+use "/**/" for multi-line comments.
