@@ -1,0 +1,19 @@
+Negative Values: You can easily convert a positive number to negative by assigning a minus sign to it (e.g., let negValue = -value).
+Remainder/Modulus: The remainder operator (%) is mentioned as being very important for cryptography and complex algorithms.
+String Concatenation: You can join two strings together using the + operator. For example, "hello" + "hitesh" results in "hello hitesh".
+
+Tricky Mixed Operations: Problems arise when mixing strings and numbers:
+If a string is first, JavaScript treats the following numbers as strings (e.g., "1" + 2 + 2 results in "122").
+If numbers are first, the math is performed before joining with the string (e.g., 1 + 2 + "2" results in "32").
+
+Boolean and Empty String Conversions:
+Using a + before a boolean converts it to a number (e.g., +true results in 1).
+An empty string with a + sign results in 0 (e.g., +"" results in 0).
+
+In a professional environment, messy code (like 3 + 4 * 5 % 3) will not be appreciated during code reviews.
+Use parentheses to make your math operations clear and readable.
+Avoid multiple assignments in one line (e.g., num1 = num2 = num3 = 2+2) because it reduces code clarity.
+
+Increment Operators:
+prefix (++x) and postfix (x++) increment operators.
+Study the MDN (Mozilla Developer Network) documentation to understand the specific differences between how prefix and postfix handle values.

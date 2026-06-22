@@ -1,0 +1,8 @@
+A datatype of a variable can be converted to other datatypes
+for example if we have "33" as value and we convert it to number then we would get 33
+if we convert a value that cannot be converted to number like "riyyan" then we would get NaN (not a number)
+if we convert true or false as number then we would get 1 and 0.
+
+so these are a few examples of conversion.
+we can also convert from number to string, to boolean, to other datatypes.
+and all datatypes support conversion from one form to an other.
