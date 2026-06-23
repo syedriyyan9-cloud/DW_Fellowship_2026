@@ -1,0 +1,26 @@
+Merging Arrays (Push vs. Concat):
+
+If you use push() to add one array into another, JavaScript treats the second array as a single data element, resulting in an array inside an array.
+The concat() method properly combines the elements of two arrays, but it returns a new array and does not change the original ones.
+
+The Spread Operator:
+
+The spread operator (...) is a modern and preferred way to merge arrays.
+It works like dropping a glass—it spreads out all individual elements so they can be easily combined into a single new array.
+
+Flattening Arrays with flat():
+
+When you have a complex situation with arrays nested inside other arrays, you can use the flat() method.
+By providing a depth (or using Infinity), this method simplifies all nested elements into one single, flat array.
+
+Converting Data to Arrays:
+
+Array.isArray(): This is used to check if a specific value is an array or not.
+Array.from(): This converts other types of data, such as strings or objects, into an array.
+Interview Tip: If you try to convert an object using Array.from() without specifying whether to use keys or values, it may return an empty array.
+Array.of(): This method creates a new array from a collection of individual variables or elements.
+
+Practical Application:
+
+These methods are particularly useful when scraping data from web pages, where information often arrives in formats like "NodeLists" that need to be converted into arrays to be manipulated.
+The speaker emphasizes that while you don't need to memorize every method, understanding these core concepts is vital for working with React and Node.js.

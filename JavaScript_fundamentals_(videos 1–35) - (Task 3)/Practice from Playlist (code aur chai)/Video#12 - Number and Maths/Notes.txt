@@ -1,0 +1,36 @@
+Defining Numbers
+
+Simple Way: You can define a number simply, like const score = 400. 
+JavaScript automatically detects it as a number.
+
+Explicit Way: You can also use new Number(100). 
+This specifically defines the value as a Number object, which gives you access to more properties in the console.
+
+Useful Number Methods
+
+toString(): Converts a number into a string. Once it is a string, you can check its length or use other string methods.
+toFixed(): Sets the number of digits after a decimal point (e.g., 100.00). This is very helpful when building E-commerce websites to keep price displays clean.
+toPrecision(): Rounds a number to a specific length of significant digits. Use this carefully, as it can sometimes return results in exponential notation if the number is large.
+toLocaleString(): Formats large numbers with commas to make them easier to read (e.g., 1,000,000). You can specify 'en-IN' to use the Indian numbering system.
+
+Important Number Properties
+
+JavaScript has built-in constants to show the limits of numbers it can handle, such as MAX_VALUE, MIN_VALUE, and MAX_SAFE_INTEGER.
+
+The Math Library
+
+Math.abs(): Converts negative numbers into positive numbers (absolute value).
+
+Rounding Numbers:
+
+Math.round(): Standard rounding (e.g., 4.6 becomes 5).
+Math.ceil(): Always rounds up to the next whole number.
+Math.floor(): Always rounds down to the lower whole number.
+Math.min() and Math.max(): These are used to find the lowest or highest value in a group of numbers.
+
+Generating Random Numbers
+
+Math.random(): This generates a random decimal number between 0 and 1.
+Custom Ranges: To get a random number within a specific range (like for a dice game), you can multiply the result and add a minimum value.
+The Formula: To get a random number between a min and max value, use this standard formula: Math.floor(Math.random() * (max - min + 1)) + min.
+This formula ensures the number stays within your chosen range and avoids getting a zero if you don't want one.

@@ -1,0 +1,37 @@
+In JavaScript, data types are divided into two main categories: 
+Primitive and Non-Primitive (also called Reference types).
+The difference is based on how they are stored in memory and how you access them.
+
+Primitive Data Types:
+These are "Call by Value," meaning when you copy them, you get a new copy of the data, not a reference to the original. 
+There are seven primitive types:
+
+String: Used for text.
+Number: Handles both integers and decimal values (there is no special "float" type).
+Boolean: Represents true or false.
+Null: Represents an intentional "empty" or "nothing" value. It does not mean zero or an empty string.
+Undefined: This happens when a variable is declared but no value has been assigned yet.
+Symbol: Used to make a value completely unique, which is helpful in advanced front-end development.
+BigInt: Used for very large numbers that the standard Number type cannot handle. You declare it by adding an n at the end of the number (e.g., 123n).
+
+Non-Primitive (Reference) Data Types
+These types allow you to access the original data directly in memory via a reference. 
+The main types are:
+
+Arrays: Written in square brackets [] (e.g., ["hero1", "hero2"]).
+Objects: Written in curly braces {} as key-value pairs (e.g., {name: "Hitesh", age: 22}).
+Functions: In JavaScript, functions can be treated like variables and stored for later use.
+
+JavaScript Typing
+JavaScript is a dynamically typed language.
+This means you do not have to manually define the type of a variable (like "number" or "string") when you create it; the language figures it out automatically based on the value assigned.
+
+The typeof Operator
+You can use the typeof operator to check the data type of a variable. 
+Some results are unique:
+typeof null returns "object". This is a common interview question.
+typeof undefined returns "undefined"
+.
+typeof a function returns "function," though it is technically considered a "function object"
+.
+All non-primitive types (like Arrays) generally return "object" when checked with typeof

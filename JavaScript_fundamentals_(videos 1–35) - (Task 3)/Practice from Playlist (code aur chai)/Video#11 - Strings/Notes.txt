@@ -1,0 +1,34 @@
+Declaration and Concatenation:
+Strings can be created using single quotes (' ') or double quotes (" ") with no major difference between them.
+The old way to join strings was using the + operator, but this is now considered outdated and less readable.
+
+Modern way to write string:
+The modern and recommended way to work with strings is using backticks (`).
+This allows for String Interpolation, where you can inject variables directly into the string using the ${variable} syntax.
+This method is more readable and allows you to perform operations (like calling methods) on the go within the placeholders.
+
+Strings as Objects:
+You can also declare a string using the new String() constructor, which treats the string as an object.
+In this format, the string is stored as key-value pairs, where the index (0, 1, 2, etc.) is the key and the character is the value.
+This object structure provides access to many built-in properties and methods through the prototype.
+
+Memory and Immutability:
+Because strings are primitive types, they are stored in the Stack memory.
+When you use a method like toUpperCase(), it does not change the original string; instead, it creates a new copy with the changes.
+
+Common String Methods:
+length: A property that tells you the number of characters in a string.
+charAt(index): Tells you which character is at a specific position.
+indexOf('character'): Tells you the index position of a specific character.
+
+Slicing and Substrings:
+substring(start, end): Extracts a part of a string. If you give it a negative value, it ignores it and starts from zero.
+slice(start, end): Similar to substring, but it accepts negative values, allowing you to start counting from the end of the string.
+
+Sanitizing and Checking Strings:
+trim(): Removes extra white spaces and line terminators from the beginning and end of a string (useful for user input forms).
+replace(search, replacement): Finds a specific part of a string and replaces it with something else.
+includes(keyword): Checks if a certain word or character exists within the string and returns true or false.
+
+Splitting Strings:
+split(separator): Converts a string into an array based on a specific character, like a dash (-) or a space.

@@ -1,0 +1,27 @@
+Basic Comparisons: 
+Comparison operators like >, <, >=, and == are used to check relationships between values. 
+When you compare similar data types, like two numbers, the result is a simple boolean: true or false.
+
+Comparing Different Data Types: 
+Problems often start when you compare different types, such as a string and a number. 
+JavaScript sometimes automatically converts a string to a number to make the comparison, but this can lead to results that are hard to predict.
+
+Consistency and Clean Code: 
+To avoid bugs, it is highly recommended to ensure that the two values you are comparing have the same data type. 
+While languages like TypeScript enforce this strictly, in JavaScript, you should follow this as a "clean code" practice to keep your logic predictable.
+
+The Tricky Case of null:
+Comparing null to zero can be confusing because equality checks (==) and comparison operators (>, <) work differently in JavaScript.
+For example, null > 0 is false, and null == 0 is false, but null >= 0 is true.
+This happens because comparison operators convert null to the number 0, while the equality check does not.
+
+Comparisons with undefined: 
+Unlike null, comparing undefined to zero using any of the standard comparison operators will always result in false.
+
+Strict Equality (===):
+A regular equality check (==) might convert data types to find a match.
+A strict check using triple equals (===) checks both the value and the data type. 
+If the types are different (like a string and a number), it will immediately return false without trying to convert them.
+
+You should generally avoid comparing different data types because of these inconsistencies. 
+Focus on clean, readable code which is more important than using tricky conversions.

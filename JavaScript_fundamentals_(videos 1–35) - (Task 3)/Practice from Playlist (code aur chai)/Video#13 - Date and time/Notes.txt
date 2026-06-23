@@ -1,0 +1,34 @@
+Core Concept of Dates
+
+In JavaScript, a Date object represents a single moment in time.
+Dates are calculated in milliseconds starting from an arbitrary date: January 1, 1970.
+When you check the type using typeof, JavaScript confirms that a Date is an Object.
+
+Creating (Declaring) Dates
+
+Current Date: Use let myDate = new Date() to create an instance of the current date and time.
+Specific Date: You can define a specific date, like new Date(2023, 0, 23).
+Important: In this format (using numbers), months start from 0 (January is 0, February is 1, etc.).
+String Formats: You can also use strings like "2023-01-14" or "01-14-2023".
+Note: When using these string formats, months typically start from 01 for January.
+
+Formatting and Methods
+
+Basic Methods:
+toString(): Gives a full string with date, time, and timezone.
+toDateString(): Gives a simpler version with just the day and date (e.g., "Mon Jan 23 2023").
+toLocaleString(): Provides a date and time format based on local settings.
+Customization: The toLocaleString method is very powerful because it allows you to pass an object to define exactly how you want the date to look (e.g., setting the weekday to be "long").
+
+Time Stamps and Comparisons
+
+Date.now(): This gives you the exact current time in milliseconds since 1970.
+Comparing Dates: To compare two dates (like for a quiz timer or hotel booking), it is easiest to convert them both into milliseconds and then compare the numbers.
+Converting to Seconds: Since time is given in milliseconds, you can divide by 1000 and use Math.floor() to get the time in seconds without decimals.
+
+Extracting Specific Information
+
+You can extract individual parts of a date using methods like:
+getMonth(): Returns the month (remember to add +1 if you want it to be user-friendly).
+getDay(): Returns the day of the week.
+getFullYear(): Returns the four-digit year.

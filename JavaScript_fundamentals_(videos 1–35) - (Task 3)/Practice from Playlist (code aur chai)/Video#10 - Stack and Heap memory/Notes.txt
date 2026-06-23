@@ -1,0 +1,17 @@
+Memory Management Overview: 
+Unlike older languages like C where programmers had to manually reserve and free memory, modern languages like JavaScript handle memory allocation automatically through garbage collection.
+
+Two Types of Memory: JavaScript uses two main types of memory: 
+Stack and Heap.
+Stack Memory (Primitive Types):
+This is used for all Primitive data types (like String, Number, Boolean, Null, Undefined, Symbol, and BigInt).
+When you declare a variable in the Stack, you are given a copy of the value.
+If you assign variable A to variable B and then change variable B, the original value in variable A remains unchanged because you only modified a copy.
+
+Heap Memory (Non-Primitive Types):
+This is used for Non-Primitive (Reference) data types, such as Objects, Arrays, and Functions.
+When an object is stored in the Heap, you don't get a copy; instead, you get a reference to the original value in memory.
+If you assign one object to another and change a property in the second object, the change will also reflect in the first object because both are pointing to the same original data in the Heap.
+
+Stack = Primitive types = You get a copy (changes don't affect the original).
+Heap = Non-Primitive types = You get a reference (changes do affect the original).

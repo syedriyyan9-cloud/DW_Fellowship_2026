@@ -1,0 +1,38 @@
+Basics of Arrays
+
+Definition: An array is an object that allows you to store a collection of multiple items under a single variable name.
+Declaration: Arrays are written using square brackets [ ]. 
+You can also declare them using the new Array() syntax.
+Mixed Data Types: JavaScript arrays can hold different types of data at once, such as numbers, strings, and booleans.
+Resizable: Unlike some other languages, JavaScript arrays are resizable; you can add or remove elements after the array is created.
+
+Accessing and Indexing
+
+Zero-Based Indexing: The first element in an array is always at index 0.
+Accessing Elements: You use the index number inside square brackets to get a specific value (e.g., myArr).
+Non-Associative: You cannot access array elements using arbitrary strings; you must use integers as indexes.
+
+Memory and Copying
+
+Shallow Copies: When you copy a JavaScript array, it creates a "shallow copy." This means the copy shares the same reference as the original. 
+If you change a value in the copy, it also changes in the original.
+Deep Copies: A deep copy does not share the same reference point as the original.
+
+Common Array Methods
+
+push(value) adds a new element to the end of the array.
+pop() removes the last element from the array.
+unshift(value) adds an element to the start of the array. This can be "expensive" or slow for the computer because it has to shift the index of every other item.
+shift() removes the first element from the array.
+includes(): Checks if a specific value exists in the array and returns a boolean (true or false).
+indexOf(): Returns the index position of a value. If the value does not exist, it returns -1.
+join(): Converts the array into a string and binds the elements together.
+
+Slice vs. Splice 
+slice(start, end): Returns a portion of the array. It does not include the end index in the result and does not modify the original array.
+splice(start, count): This method modifies the original array by removing the specified section from it. It is a common point of confusion in interviews.
+
+Prototypes and Properties
+
+Arrays have a .length property that tells you how many elements are inside.
+Arrays also have access to various methods through their prototype, which can be explored in the browser's console.
