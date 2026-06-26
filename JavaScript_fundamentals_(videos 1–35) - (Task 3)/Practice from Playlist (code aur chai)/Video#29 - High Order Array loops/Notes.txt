@@ -1,0 +1,39 @@
+The for...of Loop
+
+This loop is used to iterate over "iterable" objects like Arrays, Strings, and Maps.
+Simple Syntax: You don't need to declare a counter (like i) or manually increment it; JavaScript automatically knows when to start and stop based on the size of the object.
+Strings: You can use it to loop through every character in a string.
+Control: You can still use break to exit the loop or continue to skip a specific iteration (like skipping spaces in a string).
+
+Maps in JavaScript
+
+A Map is an object that holds key-value pairs and remembers the original insertion order of the keys.
+Unique Values: Maps only store unique keys; if you try to add a duplicate key, it will not be added again.
+Iterating Maps with for...of:
+If you loop a Map normally, it returns each entry as an array.
+To get keys and values separately, you use destructuring syntax: for (const [key, value] of map) { ... }.
+
+The for...in Loop
+
+This loop is primarily used for iterating over Objects.
+Keys vs. Values: By default, for...in gives you the keys of the object. To get the value, you must use the key to access the object (e.g., object[key]).
+Usage on Arrays: While it can be used on arrays, it returns the indexes (0, 1, 2, etc.) rather than the values.
+Note: for...in does not work for iterating over Maps.
+
+The forEach Loop
+
+This is a Higher-Order Function built directly into the array prototype.
+Callback Function: It requires a "callback function" to execute for every item in the array.
+A callback function in forEach does not have a name.
+You can use standard functions or modern arrow functions.
+Parameters: The callback function has access to three parameters for every iteration:
+The Item (the actual value).
+The Index (the position of the value).
+The Entire Array list.
+External Functions: You can also pass a pre-defined function as a reference into forEach instead of writing the logic inside the loop.
+
+Arrays of Objects
+
+A very common scenario in web development is receiving an array where every element is an object (common for database results).
+Using forEach is the most efficient way to handle this. You can iterate through the array and use dot notation (e.g., item.languageName) to access specific properties inside each object.
+This is the foundation for creating dynamic content, like generating product cards on an e-commerce site.

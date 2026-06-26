@@ -1,0 +1,43 @@
+JavaScript Execution Context (JEC)
+
+Definition: This is how JavaScript actually runs and executes a program file.
+Global Execution Context: Whenever you give code to JavaScript, the first thing it creates is the Global Execution Context. 
+This context is put into a special variable called this.
+Environment Differences: The value of the global context changes based on the environment. 
+For example, in a browser, the value of this is the Window object, whereas it is different in Node.js.
+
+Types of Execution Contexts:
+
+Global Execution Context: The main environment where code starts.
+Function (or Functional) Execution Context: Created whenever a function is executed.
+Eval Execution Context: A property of the global object, used in specific documentation like Mongoose.
+
+The Two Phases of Execution
+
+JavaScript runs your code in two distinct phases:
+
+Memory Creation Phase (or Memory Phase): In this phase, JavaScript only allocates space for variables and functions; it does not execute them.
+All variables are initially set to undefined.
+Functions are stored with their entire definition.
+
+Execution Phase: This is where actual processing happens, such as mathematical operations (plus, minus, etc.) and assigning real values to variables.
+
+How Functions are Executed
+
+New Execution Context: Every time a function is called, JavaScript creates a "new execution context" (like a fresh sandbox).
+Components of the Sandbox: This new context includes its own Memory Phase, Execution Phase, a "New Variable Environment," and an "Execution Thread".
+Returning Values: Once the function finishes its work, the result is returned to the parent (usually the Global Execution Context).
+Deletion: After a function finishes its execution and returns a value, its specific execution context is deleted to save memory.
+
+The Call Stack
+
+Purpose: The call stack keeps track of which functions are currently running.
+Structure: The Global Execution Context is always at the bottom of the stack.
+Function Management: When a function is called, it is "pushed" onto the stack. Once it finishes, it is "popped" out.
+LIFO Principle: The call stack follows the Last In, First Out (LIFO) rule. 
+This means the function that was called most recently is the first one to be completed and removed from the stack.
+
+Tools for Visualization
+
+You can see this process happening in real-time using the "Sources" tab in a browser's Inspect Element tool.
+By setting "break-points" in your code, you can watch functions enter and leave the Call Stack and see how variables move from undefined to having actual values.
