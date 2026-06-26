@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: black; color: white;">
+    <div class="parent">
+        <div class="day">monday</div>
+        <div class="day">tuesday</div>
+        <div class="day">wednesday</div>
+        <div class="day">thursday</div>
+    </div>
+</body>
+
+<script>
+    let parent = document.querySelector('.parent')
+    // console.log(parent)
+    // console.log(parent.children)
+    // console.log(parent.children[2])
+    // console.log(parent.firstElementChild)
+    // console.log(parent.lastElementChild)
+
+    let day1 = document.querySelector('.day')
+    // console.log(day1)
+    // console.log(day1.parentElement)
+    // console.log(day1.nextElementSibling)
+    // console.log("Nodes: ", parent.childNodes)
+    //
+    // how to create node lists using js
+    //
+    let div = document.createElement('div')
+    console.log(div)
+    div.className = 'main'
+    div.id = 'id'
+    // div.setAttribute('title', 'generated')
+    // div.setAttribute('name', 'riyyan')
+    // innertext makes two trips first of getting whatever is inside the element and then overwriting it.
+    // div.innerText = 'hello world'
+    // some people use the following approach
+    let addtext = document.createTextNode('riyyan')
+    div.appendChild(addtext)
+    document.body.appendChild(div)
+</script>
+
+</html>
