@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<style>
+    *
+    {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body
+    {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        top: 50rem;
+        background-color: black;
+        color: white;
+    }
+    .count
+    {
+        padding-left: 45%;
+        padding-bottom: 25%;
+        font-size: 2em;
+    }
+    button
+    {
+        width: 5rem;
+    }
+</style>
+<body>
+    <div class="counter">
+        <p class="count">0</p>
+        <button class="incrementbtn">Count</button>
+        <button class="resetbtn">Reset</button>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
