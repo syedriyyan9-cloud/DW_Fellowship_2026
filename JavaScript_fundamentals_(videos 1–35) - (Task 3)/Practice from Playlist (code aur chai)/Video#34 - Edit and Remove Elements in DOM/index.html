@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: black; color: white;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    //create nodes
+    function add_language(lang) {
+        let li = document.createElement('li')
+        li.appendChild(document.createTextNode(lang))
+        document.querySelector('.language').appendChild(li)
+    }
+    add_language("python")
+    // edit nodes
+    function edit_item(lang, index) {
+        let li_index = document.querySelector(`li:nth-child(${index})`)
+        let li = document.createElement('li')
+        li.appendChild(document.createTextNode(lang))
+        li_index.replaceWith(li)
+    }
+    edit_item("java", 2)
+    // delete nodes
+    function del_item(index) {
+        let li_index = document.querySelector(`li:nth-child(${index})`)
+        li_index.remove()
+    }
+    del_item(2)
+</script>
+
+</html>
