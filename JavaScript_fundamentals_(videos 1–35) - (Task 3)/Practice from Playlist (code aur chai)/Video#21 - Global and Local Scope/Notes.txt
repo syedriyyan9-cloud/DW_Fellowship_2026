@@ -1,0 +1,33 @@
+Definition of Scope: Scope refers to the area where a variable is available for use. In programming, this is usually defined by curly braces {}.
+The Three Keywords: JavaScript uses let, const, and var to declare variables, but they handle scope differently.
+
+Global Scope:
+
+Anything written outside of curly braces is in the global scope.
+Variables declared here are available to be used anywhere in the code, including inside blocks.
+
+Block Scope:
+
+This refers to code inside curly braces, such as in an if-else statement or a function.
+Variables declared with let and const inside a block should stay inside that block and not be accessible from the outside.
+
+The Problem with var:
+
+The source explains that var is problematic because it does not respect block scope.
+If you declare a variable with var inside an if block, it can still be accessed outside that block, which can cause confusion and bugs when multiple programmers are working on the same project.
+
+Scope Independence:
+
+You can have a variable with the same name in the global scope and a block scope.
+They remain independent; for example, a variable a could be 300 globally but 10 inside a block, and they won't interfere with each other.
+
+Environment Differences:
+
+The global scope is different depending on where you run your code.
+The scope you see when inspecting a web browser's console is different from the global scope in a Node.js environment. 
+This is a common topic in technical interviews.
+
+Nested Scope:
+
+Scopes can be "nested," meaning you can have one scope inside another, such as a function inside an if statement.
+Each new set of curly braces creates a new level of scope.

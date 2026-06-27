@@ -1,0 +1,35 @@
+Selecting Elements by ID and Class
+
+getElementById('id'): This is a common method used to grab a specific element using its unique ID.
+getElementsByClassName('class'): This allows you to select elements by their class name. 
+However, it returns an HTMLCollection, which behaves differently than a standard array.
+
+Working with Attributes
+
+getAttribute('attribute'): You can use this to see the value of a specific attribute, like checking what class or ID is attached to an element.
+setAttribute('attribute', 'value'): This method lets you change or add an attribute. 
+Important: Using this will overwrite any existing values in that attribute unless you manually include them again.
+
+Changing Styles with JavaScript
+
+You can manipulate the look of an element using the .style property.
+Inside JavaScript, CSS properties are written in camelCase (e.g., backgroundColor instead of background-color).
+You can change values like colors, padding, and border-radius directly through code.
+
+Understanding Text Content (The Big Three)
+
+There are three main ways to get or set text, and they behave differently:
+innerText: Shows only the text that is currently visible on the screen. It respects CSS (like display: none).
+textContent: Shows all text contained within an element, even if it is hidden by CSS.
+innerHTML: Shows the text along with any HTML tags (like <span> or <b>) that are inside the element.
+
+Modern Query Selectors
+
+querySelector('selector'): This is a powerful, modern tool that uses CSS-style syntax (like . for classes and # for IDs). It only returns the first element that matches your search.
+querySelectorAll('selector'): This selects every element that matches your search and returns them as a NodeList.
+
+NodeList vs. HTMLCollection
+
+NodeList: Returned by querySelectorAll. While it looks like an array, it is not a true array. However, it does support the forEach loop, allowing you to easily perform actions on every item in the list.
+HTMLCollection: Returned by methods like getElementsByClassName. It does not support forEach or other array methods.
+Conversion: To use array tools (like map) on these collections, you must first convert them into a real array using Array.from(collection).

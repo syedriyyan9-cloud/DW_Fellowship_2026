@@ -1,0 +1,38 @@
+Ways to Declare Objects
+
+There are two main ways to create an object: Literal and Constructor.
+Singleton: When you create an object using the constructor method (e.g., Object.create), it is a "singleton," meaning it is the only instance of its kind.
+Objects created using the literal method (using curly braces {}) are not singletons.
+
+Object Literals (Structure)
+
+Objects store data in key-value pairs.
+Unlike arrays, which use numbers (0, 1, 2) as keys, objects let you define your own keys (like name or email).
+By default, JavaScript treats keys as strings behind the scenes, even if you don't put quotes around them.
+
+Accessing Object Properties
+
+Dot Notation: The most common way to access data (e.g., user.name).
+Square Bracket Notation: A more powerful way to access data (e.g., user["email"]).
+Why use brackets?
+If a key has spaces in it (like "full name"), you cannot use dot notation; you must use brackets.
+It is also required when using Symbols as keys.
+
+Using Symbols as Keys
+
+A Symbol is a unique data type in JavaScript.
+To use a symbol as a key in an object, you must wrap the symbol name in square brackets within the object (e.g., [mySymbol]: "value").
+This is a common interview topic because if you don't use brackets, the symbol is treated as a regular string rather than a unique symbol key.
+
+Modifying and Freezing Objects
+
+Changing Values: You can update a value by simply re-assigning it using the = operator.
+Object.freeze(): If you want to prevent anyone from changing the values in an object, you can "freeze" it. Once frozen, any attempts to change the data will be ignored without showing an error.
+
+Functions in Objects
+
+In JavaScript, functions are treated as "first-class citizens," meaning they can be stored as values inside an object just like a string or number.
+this Keyword: When you write a function inside an object and want to refer to other properties of the same object, you use the this keyword (e.g., this.name).
+Reference vs. Execution:
+Calling user.greeting (without parentheses) gives you a reference to the function.
+Calling user.greeting() (with parentheses) executes the function.

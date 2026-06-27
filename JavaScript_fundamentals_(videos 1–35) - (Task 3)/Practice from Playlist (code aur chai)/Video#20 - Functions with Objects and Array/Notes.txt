@@ -1,0 +1,30 @@
+Handling Multiple Arguments (Rest Operator)
+
+The Problem: In situations like an e-commerce shopping cart, you don't know ahead of time how many items (or prices) a user will add.
+The Solution: Use the Rest Operator, which is written as three dots (...) before a parameter name (e.g., ...num1).
+How it Works: It "bundles" all the individual values passed into the function and puts them into a single array, making it easy to perform operations like adding them all up later.
+Note: This same symbol (...) is also called the Spread operator depending on how it is used in the code.
+
+Mixing Regular Parameters with Rest
+
+If you define specific parameters before the rest operator (e.g., function(val1, val2, ...num)), the first two values passed will be assigned to val1 and val2.
+Any remaining values after the first two will be gathered into the array. 
+This is a common topic in technical interviews.
+
+Passing Objects to Functions
+
+You can pass an entire object as an argument to a function.
+Accessing Data: Inside the function, you access the object's properties using dot notation (e.g., anyObject.username).
+Safety Tip: If you try to access a property that doesn't exist (like misspelling price as prices), JavaScript will return undefined.
+Direct Passing: You don't always have to create a variable for an object; you can pass the object literal {} directly into the function call.
+
+Passing Arrays to Functions
+
+Similarly, you can pass an array into a function to process its data.
+Accessing Elements: Inside the function, you can refer to specific elements of the array using their index (e.g., getArray to get the second value).
+Just like with objects, you can either pass a pre-defined array variable or pass the array [] directly into the function call.
+
+Professional Practices
+
+Naming: Always give functions and parameters meaningful names that describe what they do, rather than generic names like abc.
+Type Safety: In professional environments, it is important to check if the data being passed is actually the right type (like an object or array) and if the required keys exist to avoid code crashes.

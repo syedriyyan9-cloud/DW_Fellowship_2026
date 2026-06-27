@@ -1,0 +1,26 @@
+Object Destructuring
+
+Destructuring is a way to extract values from an object and store them in variables to make the code cleaner and more readable.
+Instead of repeatedly writing object.property (e.g., course.courseInstructor), you can use curly braces {} to extract the value directly.
+The syntax used is const { propertyName } = objectName.
+You can also rename the property during destructuring if the original name is too long or inconvenient (e.g., const { courseInstructor: instructor } = course).
+This concept is very important for frameworks like React, where it is commonly used to handle props more efficiently.
+
+Introduction to APIs
+
+An API is essentially a way to delegate a task to someone else, similar to ordering from a menu in a restaurant without worrying about how the food is cooked.
+In modern web development, data from a backend server is usually sent in JSON (JavaScript Object Notation) format.
+In the past, data was often sent in a more complex format called XML, but JSON has become the industry standard.
+
+Understanding JSON
+
+JSON looks very similar to a JavaScript object but it does not have a name.
+In a proper JSON structure, both the keys and the values (if they are strings) must be wrapped in double quotes.
+JSON can represent different data types including strings, numbers, and booleans (true/false).
+It is used across the entire industry, regardless of whether the backend is written in Ruby, PHP, or another language.
+
+Handling API Data
+
+API responses can come in different formats, such as a single object or an array of objects.
+For complex or nested data, developers use tools like JSON Formatter to visualize the data in a "tree structure" to understand how to access specific values.
+Having a strong foundation in arrays and objects is essential because it allows you to easily manipulate and extract the data you receive from any API.

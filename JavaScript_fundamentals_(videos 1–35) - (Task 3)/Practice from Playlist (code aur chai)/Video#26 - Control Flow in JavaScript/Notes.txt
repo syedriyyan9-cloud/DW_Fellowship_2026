@@ -1,0 +1,40 @@
+The if Statement
+Basic Logic: The code inside an if block (curly braces {}) will only execute if the condition provided is true.
+
+Comparison Operators: These are used to create conditions:
+< (less than), > (greater than), <= (less than or equal to), >= (greater than or equal to).
+== (checks if values are equal), != (checks if values are not equal).
+Strict Equality (===): Checks both the value and the data type (e.g., comparing the number 2 to the string "2" will be false with ===).
+
+if-else and else if
+
+else: Provides a fallback block of code that runs only if the if condition is false.
+else if: Allows you to check multiple different conditions one after another.
+Implicit Scope: You can write a one-line if statement without curly braces, but it is considered bad practice for multiple lines as it makes code hard to read.
+
+Logical Operators
+
+AND (&&): All conditions must be true for the code to run (e.g., user is logged in and has a debit card).
+OR (||): Only one of the conditions needs to be true for the code to run (e.g., user is logged in via Google or via Email).
+
+The switch Statement
+
+Usage: Used when you want to check a single value against many different possible "cases" (like checking which month it is).
+The break Keyword: Very important! Once a match is found, break stops the rest of the cases from running. Without it, JavaScript will execute all subsequent cases (except default).
+default: A fallback case that runs if none of the other cases match.
+
+Truthy and Falsy Values
+
+Falsy Values: Values that are assumed to be false. These include: false, 0, -0, BigInt 0n, "" (empty string), null, undefined, and NaN (Not a Number).
+Truthy Values: Values assumed to be true. Surprisingly, these include: "0" (zero in a string), 'false' (false in a string), " " (string with a space), [] (empty array), {} (empty object), and function(){} (empty function).
+
+Special Operators
+
+Nullish Coalescing Operator (??): A safety check specifically for null and undefined. It is used to provide a fallback value if a primary value (often from a database) is missing.
+Ternary Operator: A short, one-line way to write an if-else statement.
+Syntax: condition ? trueValue : falseValue.
+
+Practical Checks
+
+Checking Empty Arrays: Use the .length property (e.g., if (arr.length === 0)).
+Checking Empty Objects: Convert keys to an array and check the length (e.g., if (Object.keys(obj).length === 0)).

@@ -1,0 +1,34 @@
+What is a Function? 
+
+A function is like a package where you put several lines of code (e.g., 10 or 20 lines). 
+Instead of writing that code repeatedly, you can simply call the package whenever you need it.
+
+Basic Syntax:
+
+Use the function keyword followed by a name (like sayMyName).
+Add parentheses () and curly braces {} to define the code inside.
+
+Reference vs. Execution:
+Reference: Using just the function name (e.g., sayMyName) tells the computer where the function lives but does not run it.
+Execution: Adding parentheses (e.g., sayMyName()) actually runs or "executes" the code inside the function.
+
+Parameters vs. Arguments:
+
+Parameters: These are the placeholders you define in the function's parentheses (e.g., number1, number2) when you create it.
+Arguments: These are the actual values you pass into the function when you call it (e.g., 3, 4).
+
+The return Keyword:
+
+console.log only prints a value to the screen; it does not "give" that value back to the rest of your program.
+To save a function's result into a variable, you must use the return keyword.
+Rule of Return: Once a function hits a return statement, it stops working. Any code written after the return line will never run.
+
+Handling Missing Data (undefined):
+
+If you call a function but don't pass any arguments, the parameters will be undefined.
+You can use if statements to check if a value is undefined before running your logic to avoid errors.
+
+Default Parameters:
+
+You can set a default value for a parameter (e.g., username = "sam").
+If the user doesn't provide a name, the function will use the default one. If they do provide a name, it will overwrite the default.

@@ -1,0 +1,33 @@
+Singleton vs. Non-Singleton Objects
+Objects can be declared in two ways: as a literal (using {}) or through a constructor (using Object.create).
+The main difference for developers to remember is that objects created via the constructor are Singletons, while literal objects are not.
+Functionally, both types look and act the same when you print or use them.
+
+Nested Objects
+
+You can place objects inside other objects to create complex data structures (e.g., a regularUser object containing a fullname object).
+To access data deep within these layers, you use dot notation repeatedly (e.g., user.fullname.firstname).
+The video introduces optional chaining (using a ? before the dot) as a way to safely access properties that might not exist, preventing the code from crashing.
+
+Merging Objects
+
+If you simply put one object inside another using curly braces, you create a nested object rather than a merged one.
+Object.assign(): This method is used to combine multiple "source" objects into one "target" object. 
+It is common practice to use an empty object {} as the first target to ensure a new object is returned.
+Spread Operator (...): This is the most modern and popular way to merge objects (e.g., {...obj1, ...obj2}) because it is simple and easy to read.
+
+Working with Database Data
+
+Data from databases often arrives as an Array of Objects.
+You can access a specific object using its array index and then use dot notation to get its values (e.g., users.email).
+
+Important Object Methods
+
+Object.keys(): Extracts all the keys from an object and puts them into an array. This is very useful for looping through data.
+Object.values(): Similar to keys, this extracts all the values from an object into an array.
+Object.entries(): Converts each key-value pair into its own small array inside a larger array.
+hasOwnProperty(): This method allows you to check if a specific property (key) exists in an object, returning true or false.
+
+Prototype Exploration
+
+By using the browser's console, you can inspect an object's prototype to see all available built-in methods, such as constructor and propertyIsEnumerable.

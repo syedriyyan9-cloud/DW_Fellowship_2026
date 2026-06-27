@@ -1,0 +1,28 @@
+Nested Scope (Functions inside Functions)
+
+In JavaScript, you can have a function inside another function, a function inside an if-else block, or a function inside a loop.
+This creates a "nested" structure where each set of curly braces defines its own area of access.
+
+The Ice Cream Rule (Parent-Child Access)
+
+The speaker uses an analogy to explain variable access: Children (inner functions) can access variables from their parents (outer functions), but parents cannot take variables from their children.
+Variables defined inside a child function are destroyed once that function finishes and are not accessible to the parent function.
+This behavior, where an inner function remembers and accesses variables from its outer scope, is a fundamental part of Closures.
+
+Scope in if-else Blocks
+
+Scope rules apply to if-else blocks just like functions.
+Variables declared inside an if block (using let or const) are only available within that block. If you try to access them outside, the program will throw an error.
+
+Two Ways to Write Functions
+
+Basic Declaration: You can write a standard function like function addOne(num) { ... }.
+Function Expressions: You can also store a function inside a variable, like const addTwo = function(num) { ... }. 
+Variables in JavaScript are powerful and can hold values, objects, or even entire functions.
+
+Introduction to Hoisting
+
+Hoisting refers to how JavaScript manages variable and function declarations before executing the code.
+Calling Before Declaring:
+If you use a basic function declaration, you can call (execute) the function before the line where it is written in your code without any errors.
+If you store a function in a variable (expression), you cannot call it before its declaration. Trying to do so will result in an error because JavaScript treats the variable differently during the initial setup phase.

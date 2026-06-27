@@ -1,0 +1,39 @@
+What is an IIFE?
+
+Definition: It stands for Immediately Invoked Function Expression.
+It is a function that runs immediately after it is written, rather than waiting to be called later.
+Purpose: It is often used for tasks like starting a database connection the moment an application begins.
+
+Avoiding Global Scope Pollution
+
+One of the most important reasons to use an IIFE is to avoid global scope pollution.
+Variables in the global scope can sometimes interfere with or cause problems inside your functions.
+By using an IIFE, you create a private scope for your variables, keeping them safe from global variables and declarations.
+
+Syntax of an IIFE
+
+To create an IIFE, you wrap the entire function definition inside parentheses ().
+You then add a second set of parentheses () at the end to actually execute (invoke) the function.
+Example structure: (function code() { /* code here */ })().
+
+The Importance of the Semicolon
+
+If you want to write two or more IIFEs in the same file, you must end the first one with a semicolon ;.
+While JavaScript usually handles line endings automatically, an IIFE does not know where to stop its execution context.
+Without a semicolon, the next block of code will fail to run, causing an error.
+
+Arrow Functions and IIFE
+
+You can also write IIFEs using arrow function syntax.
+Just like a regular function, you wrap the arrow function in parentheses and add the execution parentheses at the end.
+
+Passing Parameters and Arguments
+
+IIFEs can accept parameters just like regular functions.
+You define the parameter in the first set of parentheses and pass the actual value (argument) in the second set of parentheses at the end.
+Example: ((name) => { console.log(name); })('Hitesh').
+
+Named vs. Simple IIFE
+
+Named IIFE: An IIFE where the function is given a specific name (e.g., function chai).
+Simple (Unnamed) IIFE: An IIFE created using an anonymous function or an arrow function that does not have a name.

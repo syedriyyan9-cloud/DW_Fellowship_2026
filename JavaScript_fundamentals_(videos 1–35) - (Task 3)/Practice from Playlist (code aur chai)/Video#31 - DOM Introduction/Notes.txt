@@ -1,0 +1,42 @@
+What is the DOM?
+
+DOM stands for Document Object Model.
+It represents an HTML web page as a structure of objects (like Head and Body) that JavaScript can understand and change.
+By understanding the DOM, you can dynamically update your webpage, such as adding numbers in a shopping cart or creating new page elements on the fly.
+
+The Window Object:
+
+The window object is a complex, global object provided by the browser that contains everything related to the current tab, including your location and history.
+The document is actually a part of the window object (accessed via window.document), though browsers allow you to simply use document as a shortcut.
+
+Visualizing the DOM Tree:
+
+The DOM is structured like a family tree or a hierarchy:
+
+Window: The top-level container.
+Document: Inside the window.
+HTML: The root of the actual webpage.
+Head & Body: The two main children of the HTML element.
+Inside these, you have further elements like titles, divs, headings (h1), and paragraphs.
+
+Everything is a "Node":
+
+In the DOM, every single part of the page is called a Node.
+There are different types of nodes, such as Element Nodes (like a <div>), Attribute Nodes (like a class or id), and Text Nodes (the actual words written inside a tag).
+
+Accessing and Selecting Elements:
+
+You can use JavaScript to "grab" specific parts of your page. A common method is document.getElementById('id-name'), which lets you select an element using its unique ID.
+You can also look at collections of elements, like document.links, which gives you all the links on a page.
+
+HTML Collections vs. Arrays:
+
+When you grab multiple elements (like all links), JavaScript often returns an HTML Collection.
+Important Note: An HTML Collection is not a true array. While it looks like an array, it does not have standard array methods like map or forEach by default and must be converted if you want to use those tools.
+
+DOM Manipulation:
+
+Once you have selected an element, you can change it using properties like innerHTML.
+The video demonstrates this by selecting a heading on a live Wikipedia page and instantly changing the text to "Chai aur Code" using JavaScript.
+Modern frameworks like React use these same DOM principles.
+Mastering the DOM is an important requirement for cracking technical interviews and becoming a web developer.
