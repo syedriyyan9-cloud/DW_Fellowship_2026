@@ -8,13 +8,13 @@ button.addEventListener('click', (e) =>
             let task = String(input.value)
             task = task.replaceAll(' ', '-')
 
+            let parent_div = document.querySelector('.tasks')
             let new_div = document.createElement('div')
 
             let new_task = document.createElement('p')
             new_task.appendChild(document.createTextNode(`${task}`))
 
-            let body = document.body
-            body.appendChild(new_div)
+            parent_div.appendChild(new_div)
             new_div.appendChild(new_task)
 
             let remove = document.createElement('button')
@@ -32,6 +32,7 @@ button.addEventListener('click', (e) =>
                 new_task.style.color = 'green'
                 new_task.innerText = `Completed: ${task}`
                 complete.style.display = 'none'
+                new_div.style.borderColor = "green"
             })
         }
     else
