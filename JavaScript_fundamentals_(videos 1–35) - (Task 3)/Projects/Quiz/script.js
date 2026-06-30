@@ -58,7 +58,6 @@ for (let i = 0; i < questions.length; i++)
                     all_answers.style.color = "red"
                     score--
                 }
-
             const buttons = questionDiv.querySelectorAll("button")
             buttons.forEach(btn => btn.disabled = true)
             console.log("Score:", score)

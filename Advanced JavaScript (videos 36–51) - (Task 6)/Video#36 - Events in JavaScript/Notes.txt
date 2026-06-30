@@ -1,0 +1,38 @@
+Introduction to JavaScript Events
+
+JavaScript code usually runs sequentially (line by line), but browser events are an exception because they are triggered by specific user activities like mouse clicks or keyboard presses.
+Events allow your webpage to respond to actions such as dragging and dropping, moving the mouse, or typing.
+
+Three Ways to Add Events
+
+HTML Injection: Writing onclick directly inside an HTML tag. This is generally avoided because it is not scalable for larger projects.
+Property Assignment: Selecting an element in JavaScript and assigning a function to its onclick property. While it works, it provides fewer features than modern methods.
+Event Listeners (addEventListener): This is the best and most modern approach. It is powerful because it can listen to many types of activities and supports event propagation.
+
+The Event Object
+
+When an event occurs, JavaScript creates an Event Object that contains a lot of useful data.
+Important information inside this object includes:
+Type: The kind of event (e.g., click, mouseover).
+Timestamp: Exactly when the event happened.
+Target: The specific element that was clicked.
+Coordinates: The X and Y position of the mouse on the screen or browser window.
+Key State: Whether keys like Alt, Ctrl, or Shift were being held down during the event.
+
+Event Propagation (Bubbling vs. Capturing)
+
+Event propagation determines the order in which events are triggered when elements are nested inside each other.
+Bubbling (Default): The event starts at the innermost element (the "bottom") and moves up through its parents (the "top") like a bubble.
+Capturing: The event starts at the top-level parent and moves down toward the specific item that was clicked. This is activated by setting the third parameter in addEventListener to true.
+Stopping Propagation: You can use the method e.stopPropagation() to prevent an event from moving up to its parent elements.
+
+Preventing Default Behavior
+
+Some elements have a "default" action (e.g., a link opens a website or a form submits).
+e.preventDefault() is used to stop this default action so you can handle the behavior yourself using JavaScript.
+
+Practical Application: Removing Elements
+
+The video demonstrates a mini-project where clicking an image removes its entire list item (<li>).
+Targeting Parents: By using event.target.parentNode, you can select the parent of the clicked element to ensure you remove the whole list item, not just the image.
+Strict Checking: To avoid accidentally deleting the entire list if you miss a small image, you should check the tagName (e.g., ensuring it is an "IMG") before executing the removal code.
