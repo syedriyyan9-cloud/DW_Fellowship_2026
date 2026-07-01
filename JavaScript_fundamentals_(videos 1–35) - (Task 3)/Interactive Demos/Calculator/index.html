@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+body {
+    background-color: #000;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.caculator {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 15px;
+    width: 320px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.15);
+}
+
+.input {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-align: right;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+}
+
+.button {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.button button {
+    height: 60px;
+    font-size: 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #444;
+    color: white;
+    transition: 0.2s;
+}
+
+.button button:hover {
+    background-color: #666;
+}
+
+.equal {
+    grid-column: span 4;
+    background-color: #ff9500;
+    color: white;
+}
+
+.equal:hover {
+    background-color: #e08900;
+}
+</style>
+<body>
+    <div class="caculator">
+        <input type="text" class="input">
+        <div class="button">
+            <button class="one">1</button>
+            <button class="two">2</button>
+            <button class="three">3</button>
+            <button class="four">4</button>
+            <button class="five">5</button>
+            <button class="six">6</button>
+            <button class="seven">7</button>
+            <button class="eight">8</button>
+            <button class="nine">9</button>
+            <button class="zero">0</button>
+            <button class="equal">=</button>
+            <button class="add">+</button>
+            <button class="sub">-</button>
+            <button class="mul">x</button>
+            <button class="div">/</button>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
