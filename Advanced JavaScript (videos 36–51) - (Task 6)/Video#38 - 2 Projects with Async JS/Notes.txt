@@ -1,0 +1,37 @@
+Nature of Timing Functions
+
+Functions like setTimeout and setInterval are not actually part of the core JavaScript language.
+They are provided by Browser-based APIs (Web APIs) and allow JavaScript to perform tasks outside the main execution thread without blocking other code.
+
+setTimeout and clearTimeout
+
+setTimeout: This function is used to execute a piece of code once after a specific delay (measured in milliseconds).
+Syntax: It requires a "handler" (the function to run) and a "timeout" (the delay).
+clearTimeout: This is used to cancel a scheduled timeout before it runs. To use it, you must store the reference (ID) of the setTimeout in a variable.
+Example: The video shows a heading that changes from "Chai aur Code" to "Best JS Series" after a 2-second delay unless the "Stop" button is clicked.
+
+setInterval and clearInterval
+
+setInterval: Unlike timeout, this function runs code repeatedly at every set interval (e.g., every 1 second).
+Parameters: You can pass additional arguments to the function being called through the third parameter of setInterval.
+clearInterval: This stops the repeating execution. Like the timeout version, it requires the specific ID of the interval to know which one to stop.
+
+Project 1: Unlimited Background Colors
+
+Objective: Create "Start" and "Stop" buttons that change the page's background to a random color every second.
+Random Color Logic: A function generates a random Hex color code by picking 6 random characters from a string containing numbers (0-9) and letters (A-F).
+Implementation:
+The "Start" button triggers setInterval to call the color generator.
+The "Stop" button calls clearInterval using the stored ID.
+Professional Practice: The speaker recommends setting the interval ID variable to null after clearing it. This is a "clean-up" step to free memory and make the code more efficient.
+
+Project 2: Keyboard Key Detector
+
+Objective: Build a tool that displays the name and code of any key pressed on the keyboard.
+Implementation: An event listener is added to the window to track keydown events.
+Data Display: When a key is pressed, an HTML table is injected into the page showing the e.key, e.keyCode, and e.code.
+Handling Edge Cases: The speaker highlights a common issue where the Spacebar appears empty. A small check is added to manually display the word "Space" if an empty string is detected.
+
+
+Understanding that JavaScript is single-threaded but uses Web APIs for async tasks is a frequent interview topic.
+Asynchronous code doesn't always mean fetching data from a database; it also includes these timing and event-based operations.

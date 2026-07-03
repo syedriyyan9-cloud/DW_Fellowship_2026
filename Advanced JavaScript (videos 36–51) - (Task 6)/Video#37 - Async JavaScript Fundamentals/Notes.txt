@@ -1,0 +1,34 @@
+The Default Nature of JavaScript: 
+
+By default, JavaScript is a synchronous and single-threaded language. 
+This means it executes code line-by-line, and each operation must wait for the previous one to finish before it can start.
+
+JavaScript Engine and Runtime: 
+
+The core JS engine consists mainly of a Memory Heap (for data storage) and a Call Stack (for executing code). 
+However, JS is always used within a Runtime Environment like a web browser or Node.js, which provides extra tools like Web APIs.
+
+Blocking vs. Non-blocking Code:
+
+Blocking Code: This stops the flow of the program. For example, if you are reading a file synchronously, the program can do nothing else until that file is completely read.
+
+Non-blocking Code: 
+
+This allows the program to continue with other tasks while waiting for a background process (like a database request) to finish.
+Choosing the Right Approach: Neither method is always better; it depends on the use case. 
+For example, you should use blocking logic when registering a user to ensure the data is saved in the database before sending a "Success" message.
+
+How Async Works (The Task Queue):
+
+When you call an async function (like setTimeout), the JS engine hands it off to the Web API (in a browser) or Node API.
+Once the task is finished (e.g., the timer ends), it moves into a Task Queue.
+The task waits there until the Call Stack is empty, at which point the queue sends the task back to be executed.
+
+Promises and High Priority: 
+Modern tools like the Fetch API use a special High Priority Queue (also called a Promise Queue). 
+Tasks in this queue are given preference and are executed faster than regular tasks in the standard Task Queue.
+
+The setTimeout Trap: 
+
+A common interview topic is setTimeout with a 0-second delay. 
+Even with zero delay, the code inside the timer will execute after the regular synchronous code because it must travel through the API and Queue system first.
