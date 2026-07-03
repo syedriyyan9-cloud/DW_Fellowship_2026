@@ -1,0 +1,43 @@
+What is an API?
+
+An API (Application Programming Interface) is essentially a "talking language" that allows two different systems to communicate.
+It can connect a frontend to a backend, or two different backends written in different languages like Java, Python, or PHP.
+Most modern APIs provide data in a JSON format, which looks like a large JavaScript object containing various values and properties.
+
+Tools for Reading APIs
+
+API data can often be large and difficult to read in its raw format.
+The video recommends using a JSON Formatter tool to visualize the data in a "Tree" structure.
+This helps developers understand if the data is a single object, an array, or a nested structure (e.g., an object inside an array), which is necessary for extracting specific information like a username or follower count.
+
+Legacy API Requests (XMLHttpRequest)
+
+While modern developers use fetch, the video explains the "legacy" way of making requests using XMLHttpRequest to provide a deeper understanding of how things worked for years.
+This method is part of AJAX programming and uses a "Subscriber Model" to monitor the progress of a request.
+
+Understanding readyState
+
+When using XMLHttpRequest, the request goes through five specific stages, known as readyState:
+0 (UNSENT): Client has been created; open() has not been called yet.
+1 (OPENED): The open() method has been called.
+2 (HEADERS_RECEIVED): send() has been called, and headers and status are available.
+3 (LOADING): Data is being downloaded; responseText holds partial data.
+4 (DONE): The operation is complete, and the data is fully received.
+
+Implementing the Request in Code
+
+Initialization: You start by creating a new object using new XMLHttpRequest().
+Configuring: Use the .open() method to set the HTTP method (like "GET") and the URL of the API.
+Tracking: The onreadystatechange function is used to continuously monitor the state changes. You typically check for readyState === 4 to know when the data is ready.
+Sending: The request is only officially sent when you call the .send() method.
+
+Parsing Data
+
+Data returned from an API usually arrives as a string, not a JavaScript object.
+To access specific properties (like data.followers), you must first convert that string into a JSON object using JSON.parse().
+
+JavaScript Under the Hood: The V8 Engine
+
+These are Runtime APIs provided by the environment, such as a web browser or Node.js.
+JavaScript engines, like Google's V8 engine, are written in C++.
+The implementation for console.log is actually a C++ function (e.g., d8-console.cc) that the runtime "injects" into JavaScript so developers can use it for debugging.

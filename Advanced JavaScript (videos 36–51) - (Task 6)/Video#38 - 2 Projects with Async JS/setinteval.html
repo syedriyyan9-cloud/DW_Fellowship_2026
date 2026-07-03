@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setinterval</title>
+</head>
+
+<body>
+    <h1>heading</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    let i = 0
+    // setInterval(() => console.log('hello', i++), 2000)
+    // set inteval has a third parameter that can be used to pass any arg to it, if the executing function allows it
+    // example
+    const third = (str) => { console.log(i++, str) }
+    const si = setInterval(third, 1000, 'hello')
+    //          function name, time in miliseconds, functions argument
+    //
+    // to stop setInterval we use clearInterval
+    clearInterval(si)
+    //
+    // Task: print name when clicked on start, stop printing when stop is clicked
+    // so that just means that there are 2 event listeners, where one prints and other stops
+    // so one would use setinterval while other would use clearinterval
+    // so there would be a problem as the clearinterval takes in a id, if the id is in a block than it cannot be access outside of it
+    // hence it is better to have a variable name in global scope and reassign it in block scopes
+    let name = 0
+    document.querySelector('#start').addEventListener('click', () => {
+        name = setInterval((str) => { console.log(str) }, 1000, 'riyyan')
+    })
+    document.querySelector('#stop').addEventListener('click', () => {
+        clearInterval(name)
+    })
+
+</script>
+
+</html>

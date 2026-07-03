@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #212121; color: white;">
+
+</body>
+<script>
+    // create a card using api values, task to be completed
+    let request_url = 'https://api.github.com/users/syedriyyan9-cloud'
+    let xhr = new XMLHttpRequest()
+    // console.log(xhr.readyState)
+    xhr.open('GET', request_url)
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState)
+        if (xhr.readyState === 4) {
+            let data = JSON.parse(this.responseText)
+            console.log(typeof data)
+            console.log(data.bio)
+        }
+    }
+    xhr.send()
+</script>
+
+</html>

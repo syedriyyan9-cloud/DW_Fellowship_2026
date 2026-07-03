@@ -1,0 +1,36 @@
+What is a Promise?
+
+Definition: A Promise is an object that represents the eventual completion or failure of an asynchronous operation and its resulting value.
+Analogy: It is like a real-world promise; a task is put in a queue, and it will either be completed in the future or fail.
+Real-world Uses: Common examples include database calls, file system access, network requests, or cryptographic operations.
+
+History and Context
+
+Before Native Promises: Before JavaScript had built-in promises (introduced in ES6), developers used libraries like Bluebird or Q to handle asynchronous code.
+Modern JS: Today, Node.js and browsers have native support for promises, so these external libraries are mostly no longer needed.
+
+The Three States of a Promise
+
+A promise is always in one of these three stages:
+Pending: The initial state; the task is not yet complete.
+Fulfilled: The operation completed successfully.
+Rejected: The operation failed.
+
+Creating and Consuming Promises
+
+Creation: You create a promise using the new Promise constructor, which takes a function with two parameters: resolve and reject.
+Connection: The resolve parameter is directly connected to the .then() block, while reject is connected to the .catch() block.
+Passing Data: You can pass data (like a user object from a database) through the resolve function, which then becomes available inside the .then() block.
+
+Advanced Consumption Methods
+
+Chaining (.then() chaining): You can chain multiple .then() blocks. The value returned from one .then() is passed as an input to the next one in the chain.
+The .finally() Block: This block executes no matter what happens (whether the promise was resolved or rejected). It is often used for cleanup tasks.
+Async/Await: This is a modern, cleaner way to handle promises. It tells the code to wait until the promise is settled.
+When using async/await, it is best practice to wrap the code in a try-catch block to handle potential errors gracefully.
+
+The Fetch API
+
+The fetch keyword is a modern tool used to make network requests, and it returns a promise.
+Important Detail: Converting a fetch response to JSON (using response.json()) is also an asynchronous task that returns a promise and must be "awaited".
+Priority: In the JavaScript execution engine, fetch operations are handled with higher priority compared to standard task queues.

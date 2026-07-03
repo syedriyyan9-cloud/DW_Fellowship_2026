@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 projects</title>
+</head>
+
+<body>
+    <h1>heading</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // handler is a callback function that does not have a name
+    // time out is a number that tells when the function should execute
+    // time is set in miliseconds
+    setTimeout(() => { console.log("hello") }, 2000)
+    // if you have a function that is assigned to a variable then only pass the name of the vairable to setTimeOut do not invoke it using ()
+
+    const change = setInterval(() => { document.querySelector('h1').innerHTML = 'JavaScripts' }, 2000)
+
+    // cleartimeout stops the settimout function from executing
+    // cleartimeout takes the reference of the settimeout function
+    // clearTimeout(change)
+    //
+    // we can add a event listener to the button and then when we click on the button it will invoke cleartimeout function which will stop the settimeout function from executing
+    //
+    document.querySelector('#stop').addEventListener('click', () => {
+        setTimeout(change)
+        console.log("stopped")
+    })
+    //
+    //
+    //
+    // 
+
+
+
+
+</script>
+
+</html>

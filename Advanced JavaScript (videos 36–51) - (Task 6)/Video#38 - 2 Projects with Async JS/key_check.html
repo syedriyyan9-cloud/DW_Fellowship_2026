@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>key check project</title>
+</head>
+
+<body>
+    <h1>press a key</h1>
+    <div id="key"></div>
+</body>
+
+<script>
+    // my code that i tried
+    let div = document.querySelector('#key')
+    document.body.addEventListener('keydown', (event) => {
+        let key = document.createTextNode(`${event.key}`)
+        div.appendChild(key)
+        // console.log(key)
+    })
+
+</script>
+
+</html>

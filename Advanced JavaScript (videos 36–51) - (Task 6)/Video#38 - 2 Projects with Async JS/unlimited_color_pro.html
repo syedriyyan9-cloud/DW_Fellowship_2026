@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>project try 1</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+
+<script>
+
+    // so the main objective is to keep on changing color when start button is clicked
+    // and when stop color is clicked the color should stop changing
+    // my code that i tried
+    // let name = 0
+    // let number = 0
+    // document.querySelector('#start').addEventListener('click', () => {
+    //     name = setInterval(() => {
+    //         number++
+    //         if (number === 1) {
+    //             document.body.style.backgroundColor = 'red'
+    //         }
+    //         else if (number === 2) {
+    //             document.body.style.backgroundColor = 'blue'
+    //         }
+    //         else if (number === 3) {
+    //             document.body.style.backgroundColor = 'yellow'
+    //         }
+    //         else if (number === 4) {
+    //             document.body.style.backgroundColor = 'brown'
+    //         }
+    //         else if (number === 5) {
+    //             document.body.style.backgroundColor = 'violet'
+    //         }
+    //         else if (number === 6) {
+    //             document.body.style.backgroundColor = 'green'
+    //         }
+    //         else {
+    //             document.body.style.backgroundColor = 'black'
+    //             number = 0
+    //         }
+    //     }, 1000)
+    // })
+
+    // document.querySelector('#stop').addEventListener('click', () => {
+    //     clearInterval(name)
+    // })
+
+    // actual code
+    let interval_id
+    function random_color() {
+        let values = '123456789ABCDEF'
+        let color = '#'
+        for (let i = 0; i < 6; i++) {
+            color += values[Math.floor(Math.random() * values.length)]
+        }
+        return color
+    }
+
+    function start_changing_color() {
+        interval_id = setInterval(set_bg_color, 1000)
+        function set_bg_color() {
+            document.body.style.backgroundColor = random_color()
+        }
+    }
+
+    function stop_changing_color() {
+        clearInterval(interval_id)
+    }
+
+    document.querySelector('#start').addEventListener(
+        'click', start_changing_color
+    )
+    // console.log(random_color())
+    document.querySelector('#stop').addEventListener(
+        'click', stop_changing_color
+    )
+
+</script>
+
+</html>
