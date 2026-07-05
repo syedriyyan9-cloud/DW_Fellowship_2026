@@ -1,0 +1,48 @@
+The Nature of JavaScript
+
+JavaScript is primarily a prototype-based language.
+While it uses the class keyword now, this is just "syntactic sugar" cleaner way to write code that still uses prototypes behind the scenes.
+Understanding prototypes is essential for knowing how JS handles the new keyword, this, and inheritance.
+
+Prototypal Behavior (The Chain)
+
+JavaScript has a "never give up" attitude. 
+If it doesn't find a property or method in the current object, it looks at the parent, then the grandparent, and so on.
+This search continues up the Prototype Chain until it either finds what it needs or hits null.
+
+The Object Hierarchy
+
+Almost everything in JavaScript is an object.
+Arrays and Strings are objects. They have their own prototypes, but those prototypes eventually point to the base Object prototype.
+The final stop in this chain is always null.
+
+Functions are also Objects
+
+A function in JavaScript can behave like a regular function (executing code), but it can also behave like an object.
+You can actually add properties (like .power) or methods directly to a function using dot notation, just like you would with an object.
+
+The new Keyword: Behind the Scenes
+
+When you use the new keyword to create an object from a function, four specific things happen:
+A new empty object is created.
+Prototype Linking: The new object gets linked to the prototype property of the function.
+Constructor Call: The function is called with the this keyword bound to the new object.
+Return: The new object is returned (unless the function explicitly returns another object).
+
+The this Keyword (Context)
+
+The this keyword refers to the current context—it tells the code who is calling the method.
+The speaker uses a simple rule: this means "the one who called". 
+This allows shared methods to know exactly which object's data they should update (e.g., updating the price of "Chai" vs. "Tea").
+
+Prototypal Inheritance
+
+Injecting Methods: You can add your own custom methods to the prototype of an object, array, or even the top-level Object.
+Top-Level Access: If you add a method to the base Object.prototype, every array, string, and function in your code will automatically have access to that method.
+Specific Access: If you add a method only to Array.prototype, then strings and objects will not have access to it.
+Linking Objects: You can link two objects so one can access the properties of the other using the legacy __proto__ property or the modern Object.setPrototypeOf() method.
+
+Practical Example: Custom String Method
+
+The speaker demonstrates this "magic" by adding a custom method called trueLength to all strings.
+By adding it to String.prototype, any string can call .trueLength() to automatically trim extra spaces and return the actual count of characters.

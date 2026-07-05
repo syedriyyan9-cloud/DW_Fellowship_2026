@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // in JS technically there are no classes
+    // oop is just a programming paradigm(style)
+    // JS is a prototype based language
+    // calsses are primarily syntactic sugar
+    // meaning it is only given to make it easy for the programmers coming from different languages
+    // 
+    // objects are just collections of properties and methods 
+    // why use oop --- because without it there was a lot spagetti code so it was hard to read and maintain
+    // 
+    // constructor function
+    // prototypes
+    // classes 
+    // instances (new, this)
+    // 
+    // four pillars of oop is abstraction, polymorphism, inheritance, encapsulation
+    // 
+    // 
+    // what is obj literal, it is just an obj
+    // example
+    const user = {
+        // attributes of obj
+        username: 'riyyan',
+        login_count: 8,
+        signed_in: true,
+        // method of obj
+        get_user_details: function() {
+            console.log(this.username)
+        }
+    }
+    console.log(user)
+    user.get_user_details()
+    // 
+    // objects need to find context for it to work on its own attributes
+    // for this reason we use 'this' keyword
+    // similar to 'this' in cpp
+    // when only this is printed inside the obj it will get the obj
+    // in global, this keyword gives an empty obj
+    // in browser, this keyword gives window obj
+    // 
+    // now what if i want to create another user so this would be tedious
+    // so for that reason we use constructor function
+    // the new keyword is an operator used to invoke constructor function, this creates a new obj
+    function User(username, login_count, is_logged_in){
+        this.username = username
+        this.login_count = login_count
+        this.is_logged_in
+        this.get_details = function(){console.log(`Welcome ${this.username}`)}
+        return this     // returns the obj, even if we remove this statement, it will still return the obj
+    }
+    // let user1 = User('riyyan',2,true)
+    // let user2 = User('syed',3,false)
+    // console.log(user1, user2)
+    // this will return global scope which here would be window obj
+    // this will overwrite the values in user1
+    // for this reason we use new keyword, as it will create a new context for every obj and keep their values maintained
+    let user1 = new User('riyyan',2,true)
+    let user2 = new User('syed',3,false)
+    console.log(user1, user2)
+    // the constructor is also available, it is just a function that refers to the obj itself nothing more
+    // 
+    user1.get_details()
+    console.log(user1.constructor)
+    // 
+    // 
+</script>
+</html>

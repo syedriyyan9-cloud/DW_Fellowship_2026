@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype behavior</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // JS default behavior is prototypal behavior, keeps on looking in the enclosing for a variable if it cannot find it in local scope, if not found returns undefined
+    // because of prototype this, functions, obj, classes every thing exists
+    // whatever you declare, it is an obj. in fact everything is an obj in JS.
+    // whatever properties are present in obj can be used by anything.
+    // function can act like a function and also as an obj
+    // this keyword is also related to prototype, prototype allows this to tell about context.
+    // to make function understand context we use this keyword.
+    // we also have to tell the prototype that we have injected new context.
+    // 
+    // challenge is to create a method for a datatype on your own, so that we can use it on any variable of the same type.
+    // we can inject our own method to a datatype.
+    // for that we access Object.prototype.func_name = function
+    // here we know that every variable moves through being an obj. so giving a property to Object would give property to every other obj declared.
+    // 
+    // this can be done to any datatype example String, Number, Array etc..
+    // so doing this gives property to a specific data type or types of obj
+    // 
+    // we can even link objects using prototype, we have to use __proto__ for this example
+    // __proto__: some other obj
+    // by this one obj can inherit or use other obj's properties
+    // 
+    // we can also use Object.setPrototypeOf(obj1, obj2)
+    // now obj 1 can use the properties of obj 2
+    // 
+    // 
+    // 
+</script>
+</html>

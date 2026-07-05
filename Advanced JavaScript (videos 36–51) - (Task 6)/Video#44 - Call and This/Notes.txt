@@ -1,0 +1,34 @@
+Introduction to call()
+
+In JavaScript, call(), apply(), and bind() are three related methods used to manage function context.
+While modern frameworks like React have reduced their daily use, they remain essential for understanding JavaScript's internal behavior and are common topics in technical interviews.
+
+Execution Context and this
+
+Whenever a function runs, it creates its own Execution Context inside the Call Stack.
+Every Execution Context contains its own memory, scope information, and a specific value for the this keyword.
+By default, in a browser, this refers to the Window object, while in Node.js, it refers to an empty object {}.
+
+The Problem: Losing Context
+
+When one function calls another helper function (like a function to set a username), the helper function creates its own new execution context.
+In this new context, the helper function's this no longer points to the original object being created; it points back to the global object (window or {}).
+As a result, any changes or variables set by the helper function are applied to the wrong place, and the original object remains incomplete.
+
+The Solution: Using call()
+
+The call() method allows you to explicitly decide what the this keyword should refer to.
+By using .call(this, ...args), you are telling JavaScript: "Execute this function, but don't use your own this. Use the this context I am providing to you".
+This ensures that the helper function modifies the correct object properties instead of the global object.
+ 
+Syntax and Usage
+
+Syntax: functionName.call(thisArg, arg1, arg2, ...).
+The First Argument: The first parameter passed to call() is always the object you want to use as the this context.
+Immediate Execution: Unlike bind(), which creates a copy of the function for later use, call() invokes the function immediately.
+
+Key Interview Takeaways
+
+Every function call creates a new execution context with its own this.
+Calling a function normally does not make it inherit the caller's context.
+call() is used to "borrow" methods or ensure a function operates on the correct data by passing the desired object as the first argument.

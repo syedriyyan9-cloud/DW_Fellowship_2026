@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise in JS</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // promise object represents acceptance or rejection of async operations, it is an object
+    // we will create several promises
+    // promises are either created or consumed
+    // you can create promise object using new keyword
+    // example:
+    // const promise_one = new Promise()   // promise has been created
+    
+    // using Q or bluebird were first libraries that allowed the use of promises, later it was integrated into the JS
+    // as of yet we do not need to use these libraries, as promises in JS are powerful enough to get our work done
+    // promises take callbacks as their arguments, the callback function takes two more parameters resolve and reject.
+    const promise_one = new Promise((resolve, reject) => {
+        setTimeout( () => {
+            console.log('Hello')
+            resolve()
+        }, 1000)
+    })
+    // to consume promise we use .then(), this method has direct connection with resolve argument
+    promise_one.then(()=>{
+        console.log('Promise consumed')
+    })
+    // you will notice that only 'hello' will be printed but 'promise consumed' is not
+    // this is because we have not connected resolve with .then
+    // to connect you have to invoke resolve, resolve is a function
+    // resolve states that the promise has be consumed so after that .then is invoked
+    // 
+    const promise_two = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log('task 2')
+            resolve()
+        },1000)
+    })
+    promise_two.then( () => {
+        console.log('Promise 2 consumed')
+    })
+    // 
+    const promise_three = new Promise( (resolve, reject) => {
+        setTimeout(() => {
+            resolve({username:'riyyan',email:'riyyan@gmail.com'})
+        },1000)
+    })
+    // all the values are passed to .then using a parameter in the callback function
+    // so this is how it is working,
+    // first inside resolve we have passed the values, .then can use these values if it's callback function can get the values from resolve
+    // to get values from resolve we create a parameter in callback function which is inside .then method.
+    promise_three.then( (data) => {
+        console.log(data)
+    })
+    // 
+    // 
+    const promise_four = new Promise( (resolve,reject) => {
+        setTimeout(() => {
+            let error = true
+            if (error) {
+                resolve({username:'riyyan', password:123})
+            } else{
+                reject('Error: here lalalalala')
+            }
+        },1000)
+    })
+    // to get an attr from obj we use chaining, the chaining will also help in avoiding callback hell
+    promise_four
+    .then((user) => {
+        console.log(user)
+        return user.username
+    })
+    .then((username) => {
+        console.log(username)
+    })
+    .catch((err) => console.log(err))
+    .finally(() => console.log('work done'))
+    // when chaining have .then, .catch on new lines as it improves readability. 
+    const promise_five = new Promise( (resolve, reject) => {
+        setTimeout(() => {
+            let error = false
+            if (error) {
+                resolve({username:'riyyan', password:123})
+            } else{
+                reject('Error: JS went wrong')
+            }
+        },1000)
+    })
+    // promise can be handeled using async and await
+    // async await is the same as .then, .catch, it waits for the promise to complete only moves forward when the promise is successful
+    async function consume(){
+        try{
+            const response = await promise_five
+            // as promise is an object we do not use () to consume it
+            console.log(response)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    consume()
+    // 
+    async function get_user(){
+        try {
+            const response = await fetch('https://api.github.com/users/syedriyyan9-cloud')
+            const data = await response.json()
+            // a lot of things take time so for that reason we use await as converting takes time
+            console.log(data)
+        } catch (error) {
+            console.log('cannot fetch data')
+        }
+    }
+    // get_user()
+
+    fetch('https://api.github.com/users/syedriyyan9-cloud')
+    .then( (response) => {
+        const data = response.json()
+        return data
+    })
+    .then( (data) => console.log(data))
+    .catch( (error) => console.log(error))
+    // 
+    // 
+</script>
+</html>
