@@ -1,0 +1,33 @@
+Evolution of Web Requests
+
+Legacy Method (XHR): Historically, web requests were made using XMLHttpRequest (XHR), which started with Internet Explorer 5.
+The Problem: XHR became difficult to work with as web development grew, often leading to complex code (callback hell) and issues with managing different states.
+The Solution: The fetch API was introduced as a modern successor that is much easier to read and uses Promises to handle data.
+
+fetch in Node.js
+
+Recent Addition: For a long time, fetch was only available in browsers. It was officially merged into Node.js in early 2022.
+Internal Changes: It took time to bring fetch to Node.js because the browser version depended on specific browser tools (like web streams). Node.js developers had to write their own versions of these tools to make fetch work natively.
+
+How fetch Works
+
+Definition: fetch is a global method used to start a network request for a resource.
+Returns a Promise: When you call fetch, it immediately returns a Promise. You then use .then() and .catch() (or async/await) to handle the result.
+Sending Data: Beyond simple requests, you can pass a second parameter to fetch (an options object) to send headers, body data, or specify methods like POST, PUT, or DELETE.
+
+Important Error Handling Rule
+
+The 404 Exception: A common interview question is where a "404 Not Found" error goes. In fetch, a 404 error is considered a successful response (fulfilled), not a rejection.
+When it Rejects: fetch only moves to the "rejected" state if the request fails to happen at all (for example, if there is no internet connection or the browser cannot reach the network).
+
+The Microtask Queue (High Priority)
+
+Priority System: JavaScript uses different "queues" for asynchronous tasks. While setTimeout goes into a standard Task Queue, fetch results go into a special Microtask Queue (also called a Priority or Fetch Queue).
+The "V.I.P." Line: The Microtask Queue is like a V.I.P. line; its tasks are executed before regular tasks. This is why a fetch result will often appear in your console before a setTimeout result, even if they were triggered at the same time.
+
+Internal Two-Part Process
+
+When you run a fetch command, the process splits into two parts:
+Data Space (Memory): JavaScript reserves space in memory for the data. It creates private internal arrays called onFulfilled (for success) and onRejected (for failure). You cannot access these directly.
+Network Request (Web/Node API): A separate part of the engine handles the actual communication with the network.
+Completion: Once the network request gets a response, it triggers the internal functions to fill the reserved memory space with the actual data, which then becomes available to your code as a response.

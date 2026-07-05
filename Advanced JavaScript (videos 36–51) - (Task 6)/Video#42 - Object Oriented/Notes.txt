@@ -1,0 +1,46 @@
+Nature of JavaScript and Classes
+
+Prototype-Based Language: While JavaScript now uses the class keyword (introduced in ES6), it is primarily a prototype-based language at its core.
+Syntactic Sugar: Classes in JavaScript are often called "syntactic sugar." This means the class syntax is just a cleaner way to write code that makes it look like Java or C++, but behind the scenes, it still uses prototypes.
+Programming Paradigms: OOP is a programming style or structure (paradigm). Other styles include functional and procedural programming.
+
+What is an Object?
+
+Definition: An object is simply a collection of properties and methods.
+Properties: These are like variables or constants stored inside the object (e.g., username).
+Methods: These are functions that the object can perform (e.g., getUserDetails).
+Purpose: OOP helps avoid "spaghetti code" that is so messy and tangled that parts cannot be easily reused.
+
+The Four Pillars of OOP
+
+Four fundamental concepts that define OOP:
+Abstraction: Hiding complex internal details from the user. For example, when you use fetch, you don't need to know how the network request works internally.
+Encapsulation: Wrapping data and methods into a single unit (an object) and restricting direct access to some parts.
+Inheritance: Allowing one object to access the properties and methods of another (discussed further in prototype-related videos).
+Polymorphism: The ability of one method to take on multiple forms or perform different tasks.
+
+Object Literals and the this Keyword
+
+Object Literal: This is the basic unit of JavaScript, created using curly braces {}.
+The this Keyword: This refers to the current context. It helps JavaScript understand which specific object's properties you are talking about.
+Global Context:In a browser, the global this refers to the Window object.
+In Node.js, the global this is an empty object {}.
+
+Constructor Functions and the new Keyword
+
+The Problem: Creating many individual object literals (like User1, User2) is inefficient because it leads to repeated code.
+The Solution: A Constructor Function allows you to create a "template" to generate multiple instances of an object.
+The new Keyword: This is critical. Without it, if you create a second user, the new data will overwrite the first user's data. Using new ensures you get a fresh copy (instance) that is independent of others.
+
+How the new Keyword Works Internally
+
+When you use the new keyword, four things happen:
+A new empty object is created (the "instance").
+A constructor function is called.
+The this keyword is injected with the arguments (values) you passed in.
+The function returns the new object to you.
+
+Checking Instances
+
+constructor Property: This property is a reference back to the function that created the object.
+instanceof Operator: This is a tool used to check if a specific object was created from a particular constructor or class.
