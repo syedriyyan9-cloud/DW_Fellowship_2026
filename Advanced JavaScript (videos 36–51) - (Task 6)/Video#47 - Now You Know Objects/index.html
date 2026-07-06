@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // if you want to know about the properties of an object use getOwnPropertyDescriptor method on the obj
+    // it is available for all objects
+    // Math.PI is a constant that cannot be changed so why can it not be changed
+    const descriptor = Object.getOwnPropertyDescriptor(Math,"PI")
+    console.log(descriptor)
+    // notice writable property is false meaning it cannot be rewritten
+    const chai = {
+        name: 'ginger chai',
+        price: 250,
+        is_avaiable: true,
+    }
+    // console.log(Object.getOwnPropertyDescriptor(chai))
+    // returns undefined as this is an object not a property
+    // for that pass the property as the string
+    console.log(Object.getOwnPropertyDescriptor(chai, 'name'))
+    // now we want to change the properties of our object for that we use defineProperty method
+    Object.defineProperty(chai,'name',{
+        writable: false,
+        enumerable: false,
+        configurable: false,
+    })
+    // now we have defined the properties of our obj from true to false
+    console.log(Object.getOwnPropertyDescriptor(chai, 'name'))
+    // so now we have made enumerable false so it means it cannot be iterated over
+    // to iterate over we use the object.entires along with keys, values
+    for(let [key, value] of Object.entries(chai)){
+        console.log(`${key} : ${value}`);
+    }
+    // we can access all the properties but not the name property as we have set it to enumerable false
+    // this is useful when your obj have methods
+    // we do not want our method to be enumerable so for that reason we use defineProperty
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+</script>
+</html>

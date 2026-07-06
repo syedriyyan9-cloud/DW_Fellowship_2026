@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // closure is the combination of a function bundeled together with references to its surrounding state (te lexical environment)
+    // in simple words the inner function would have access to variables present in the outer function
+    // in JS closures are created every time a function is created, at the function creation time.
+    // lexical scoping
+    function init() {
+        let name = "Mozilla" // name is the local variable created by init
+        
+        function display_name() {
+            // display_name() is the inner function, that forms the closure
+            console.log(name) // use variable declared in the parent function
+        }
+        display_name()
+    }
+    init()
+    // both outer and inner function share the same memory space
+    // function execution context creates another inner function execution context
+    // hence forth inner function can access the variables of outer function
+    // think of inner function as child and outer function as parent
+    // 
+    // Lexical Scoping means whether a variable is accessable based on its position in the code.
+    function make_func() {
+        const name = "Mozilla"
+        function display_name() {
+            console.log(name)
+        }
+        return display_name
+    }
+    const my_func = make_func()
+    my_func()
+    // now the inner function is returned as a refernce to the variable
+    // meaning the variable is pointing towards the memory place where inner function is in the memory
+    // so when the inner function is invoked the context is given by the outer function
+    // so the inner function calls the outer function for the context, then it gets it and then executes.
+    // hence entire lexical scope is given as the execution context.
+    // so closures are functions that return inner function but the inner function's entire lexical scope also gets returned
+    // 
+    // 
+    // 
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind</title>
+</head>
+<body>
+    <button>button click</button>
+</body>
+<script>
+    // 
+    class React{
+        constructor(){
+            this.library = 'React'
+            this.server = 'https://localhost:300'
+            // requirement
+            document.querySelector("button")
+            .addEventListener('click', this.handle_click.bind(this))
+        }
+        handle_click(){
+            console.log('button clicked')
+            console.log(this.server)
+        }
+    }
+    const app = new React()
+    // now we want something to happen when the button is clicked
+    // for that we use handleClick method
+    // now the problem is our this.server is undefined, but when we console.log only 'this' keyword we get the context
+    // so to solve a problem like this we use the 'bind' method
+    // to use it we need to all the bind on the function with this as an arg
+</script>
+</html>

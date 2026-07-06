@@ -1,0 +1,39 @@
+Purpose of Getters and Setters
+
+Fine-grained Control: Getters and setters allow you to control how a property is accessed or modified.
+Custom Logic: You can use them to return formatted data (like making a password uppercase) or to hide the actual data being stored.
+Default Behavior: Every class has default getters and setters, but you can overwrite them to add your own custom code.
+
+Basic Syntax and Rules
+
+To create them, you use the get and set keywords followed by the property name.
+The Pair Rule: If you define a getter for a property, you must also define a setter for it.
+Perspective: A getter is used when someone wants to see the value from outside the class, while a setter is used to put a value into the class.
+
+The "Stack Overflow" Problem
+
+Race Condition: If you use the exact same variable name in your constructor, getter, and setter, it creates an infinite loop.
+The Error: The setter tries to set the value, which calls the setter again, and so on, until the browser crashes with a "Maximum call stack size exceeded" error.
+The Fix: To avoid this, developers use a slightly different name for the internal variable, most commonly by adding an underscore (e.g., this._password instead of this.password).
+
+Internal Mechanics and Memory
+
+Getters and setters are special methods that sit "on top" of a property.
+They overwrite the process of getting data from memory or storing data into memory.
+From the outside, the user still interacts with the property like a normal variable (e.g., user.email), but behind the scenes, your custom getter/setter functions are running.
+
+Three Ways to Implement Them
+
+Class-based (Modern): Using the get and set keywords inside a class (used in 90% of modern cases).
+Function-based (Legacy): Using Object.defineProperty() inside a constructor function.
+Object-based: Using get and set directly inside an object literal.
+
+Private Properties and Conventions
+
+The Underscore (_): Using an underscore is a standard practice to signal that a property is "private" and should not be accessed directly outside the class.
+The Hash (#) Proposal: There is a newer JavaScript proposal to use the # symbol to make properties truly private so they cannot be accessed at all from outside the class.
+
+Real-world Examples
+
+Array Length: The .length property on arrays uses getters and setters behind the scenes to calculate the size of the array on the fly.
+Data Protection: They are useful when you want to store a password in one format (like encrypted) but show it in another, or to validate an email before saving it.

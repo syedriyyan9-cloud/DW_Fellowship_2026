@@ -1,0 +1,28 @@
+Lexical Scoping
+
+Definition: Lexical scoping refers to how a function nested inside another function has access to the variables declared in the outer (parent) function's scope.
+The "Parent-Child" Rule:
+An inner function can access all variables, properties, and functions of its parent function.
+One-Way Access: While children can access parent data, a parent function cannot access the private variables (the "secrets") of its child functions.
+Sibling Privacy: Different functions inside the same parent (siblings) do not share their private data with each other.
+
+Closures
+
+Definition: A closure is formed when a function is returned from another function.
+The Entire Scope: When you return an inner function, you aren't just returning the function's code. You are returning its entire lexical scope.
+Memory Persistence: Because of closures, even after an outer function has finished executing and its execution context is gone, the inner function "remembers" and can still access the variables from that outer scope.
+Technical Tip: In interviews, it is crucial to mention that the entire lexical scope is returned, not just the function itself.
+
+Practical Real-World Example
+
+The Problem: The video demonstrates a scenario where you have multiple buttons (e.g., Orange and Green) to change the page's background color.
+The Efficiency Issue: Writing individual click handlers for hundreds of buttons violates the DRY (Don't Repeat Yourself) principle.
+The Execution Trap: If you try to pass a parameter directly to an event (like onclick = clickHandler('orange')), the function executes immediately when the page loads instead of waiting for a click.
+The Closure Solution: By using a closure, you can create a clickHandler function that returns another function.
+The returned function "remembers" the specific color passed to it.
+This allows the event listener to receive a function definition that only runs when clicked, while still having access to the correct color data.
+
+Why This Matters
+
+Understanding these concepts is vital for solving complex coding problems and is a very common topic in technical interviews.
+It helps developers move beyond basic syntax to understand how JavaScript manages memory and references "under the hood".

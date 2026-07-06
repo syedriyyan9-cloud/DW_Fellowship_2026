@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 
+    class User {
+        constructor(email, password){
+            this.email = email
+            this.password = password
+        }
+        get email(){
+            return this._email.toUpperCase()
+        }
+        set email(value){
+            this._email = value
+        }
+
+        get password(){
+            return this._password.toUpperCase()
+        }
+        set password(value){
+            this._password = value
+        }
+    }
+    const riyyan = new User('riyyan@gmail.com', 321)
+    // getters and setters are methods that allow you to control the access to properties of the obj
+    // example if someone wants the access to my password, so if he tries to get the password directly he would get an error
+    // if you define setter than you also have to define getter and vice versa
+    
+    // console.log(riyyan.password)
+    // as we know that constructor is also setting the password and constructor is also setting the password, this leads to a race between both functions which then leads to stack running out of memory, this condition is called race condition
+    // to solve this problem create a new variable in the set function by using _ before the original variable name
+    
+    // console.log(riyyan.email)
+    // 
+    // there are function based syntax which support defineProperty method
+    // the defineProperty takes three args, first is the context, this, second is name of the property in str, and lastly what properties you want to change
+    // 
+    // factory function is a method that creates an obj using Object.create()
+    // so if you have a class pass it as an arg to the factory function to create an obj of that class
+    // you can use the new keyword, both create the obj
+    // 
+    // underscore _ shows that it is a private attribute or property
+    // the get keyword followed by the name of the attr, without underscore, means that get is getting the attr even if it is private
+    // the set keyword followed by the name of the attr, without underscore, means that set is setting the value of the attr even if it is private
+    // 
+    // so even if you have a _email as your attribute in class, not in the constructor, you can use get or set to get their values
+    // getter and setter are references to the variables not the methods, as they sit upon the variables values. so never invoke them using ()
+    // 
+    // 
+</script>
+</html>

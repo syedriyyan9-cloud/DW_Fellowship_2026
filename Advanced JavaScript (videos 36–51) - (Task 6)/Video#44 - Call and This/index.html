@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // what is call, what is its usecase
+    // call stack has global execution context upon which funciton execution context takes place
+    // in every functional context there are a lot things that happen, or take place
+    // there is a situation where a function calls another function. now what function is 'this' keyword going to refer
+    // in these sceanarios this keyword would refer to global context not the local
+    // 
+    function set_user_name(username){
+        // complex calculations
+        this.username = username
+    }
+    function create_user(username, email, password){
+        set_user_name.call(this, username)
+        this.email = email
+        this.password = password
+    }
+    // now in the above function the this keyword should have access to the function set username, as we have seen that when anything is defined inside a function, the this keyword would refer to it
+    // 
+    const chai = new create_user('riyan', 'riyyan@gmail.com','123')
+    console.log(chai)
+    // only sets email and password but not username, the set username function is not being called
+    // this is because the JS has only gotten its reference not its execution
+    // so for this reason we use the .call method
+    // without .call the function set username would create a function execution but would not give the values back to the outer function create user
+    // so for this reason the .call mehtod is used which allows values to be used inside outer function
+    // to hold reference given back to the outer function from the inner function we have to use this as the first arg and username as the second arg so now inner fuction would have 2 arg but 1 parameter 
+    // 
+    // 
+    // 
+</script>
+</html>

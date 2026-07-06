@@ -1,0 +1,40 @@
+Nature of Classes in JavaScript
+
+JavaScript classes were introduced in ES6 to provide a cleaner and easier way to write object-oriented code.
+Classes are often called "syntactic sugar" because they do not change how JavaScript works internally; the language still uses functions, objects, and prototypes behind the scenes.
+Before classes existed, developers had to use constructor functions and prototypes to achieve the same results.
+
+Creating a Class and the Constructor
+
+To define a class, you use the class keyword followed by the name of the class.
+A constructor is a special method inside a class that runs automatically every time you create a new object using the new keyword.
+The constructor is typically used to initialize the properties of the object, such as a username or password.
+
+Adding Methods
+
+Methods are functions defined inside a class that describe what the object can do.
+When writing methods inside a class, you do not need to use the function keyword.
+Methods are internally stored on the prototype of the function, which is how JavaScript has always handled object behaviors.
+
+Class Inheritance
+
+Inheritance allows one class to reuse the code and functionality of another class using the extends keyword.
+A "child" class (e.g., Teacher) can inherit all methods and properties from a "parent" class (e.g., User).
+This helps developers avoid repeating the same code in different parts of an application.
+
+The super() Keyword
+
+The super() function is used inside a child class to call the constructor of its parent class.
+It automatically handles the passing of the this context, which is a much cleaner approach than the older method of using Parent.call(this).
+You must call super() before you can access the this keyword inside a child class constructor.
+
+Static Methods
+
+By using the static keyword, you can create methods that belong to the class itself rather than to the individual objects created from it.
+Individual objects cannot access static methods; they must be called directly using the class name (e.g., User.createId()).
+Static methods are often used for utility tasks, like generating unique IDs or validating data, that don't need to interact with a specific object's data.
+
+The instanceof Operator
+
+The instanceof operator is used to check if an object was created from a specific class.
+It also returns true if the object belongs to any class in the inheritance chain (for example, a Teacher object is also an instance of User).

@@ -1,0 +1,25 @@
+Historical Context: Early React
+
+In the early versions of React (before version 1.0), concepts like call, apply, and bind were not hidden behind abstractions like they are today.
+Developers who understood these "under the hood" concepts could solve errors quickly, while others struggled with common issues related to the this keyword.
+
+The Problem: Losing Context
+
+When you use a class method as an event listener (for example, clicking a button), the this reference often gets lost or changed.
+In the video's example, a function meant to log a server URL returns undefined because its this context points to the HTML button that was clicked, rather than the class instance where the data is stored.
+
+What is the bind() Method?
+
+bind() is a keyword used to manually and forcefully attach a specific context (this) to a function.
+Unlike call(), which executes a function immediately, bind() creates a new version of the function that is "pre-packaged" with the correct context for use later (like when a user eventually clicks a button).
+
+How bind() Works in Practice
+
+To fix the context issue, you pass the desired this context into the method: this.handleClick.bind(this).
+This ensures that when the function runs, it carries all the variables, properties, and other methods of the class along with it.
+By binding, the function still knows which element triggered it but can also access the internal data of the class (like a server URL or username).
+
+Legacy Code and Modern Development
+
+In modern React, you don't often have to write manual bindings because of new features like arrow functions and hooks.
+However, understanding bind is still important for legacy codebases and technical interviews, as it explains how JavaScript handles object references behind the scenes.

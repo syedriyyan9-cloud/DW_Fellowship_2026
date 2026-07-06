@@ -1,0 +1,35 @@
+The Math.PI
+
+In JavaScript, Math.PI is a constant with a value of approximately 3.14.
+Even if you try to overwrite it (e.g., Math.PI = 5), the value will not change.
+The reason it cannot be changed isn't just because it's a "constant," but because of how its internal properties are configured deep within the JavaScript engine.
+
+Property Descriptors
+
+Every property in a JavaScript object has hidden "meta-properties" called descriptors that define how that property behaves.
+You can view these hidden rules using the method: Object.getOwnPropertyDescriptor(object, "property").
+When you check Math.PI, you find that its internal flags are set to false, which prevents any changes.
+
+The Four Key Descriptor Flags
+
+Three main flags that control a property's behavior:
+writable: If this is false, the value of the property cannot be updated or overwritten.
+enumerable: If this is false, the property will be hidden during loops (like a for...of loop).
+configurable: If this is false, you cannot change these descriptor flags or delete the property later.
+
+Customizing Your Own Objects
+
+By default, when you create your own object, these flags are usually all set to true.
+However, you can manually set these rules using Object.defineProperty().
+Example: The speaker creates a chai object. By setting the name property to enumerable: false, that property completely disappears when someone tries to loop through the object, even though it still exists in memory.
+
+Iterating Through Objects
+
+Objects are not automatically "iterable" like arrays. To loop through them using for...of, you typically use Object.entries(yourObject).
+The video shows a professional way to handle loops by checking if a property is a function before printing it, which prevents the code from "breaking" if the object contains methods instead of just data.
+
+Why This Matters
+
+This is considered advanced JavaScript knowledge often asked in senior-level interviews (SD2 or SD3 positions).
+Understanding these properties is helpful when working with third-party libraries or backend APIs where certain data might be hidden or "locked".
+The speaker emphasizes that you only learn these advanced details by building complex projects and running into real-world problems where simple object manipulation isn't enough.

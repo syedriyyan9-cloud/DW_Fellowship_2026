@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // class is a keyword in JS and it is a valid syntax
+    class User{
+        constructor(username, email, password){
+            this.username = username
+            this.email = email
+            this.password = password
+        }
+        // note the function keyword is not used here, this is due to the special syntax inside class
+        encrypt_password(){
+            return `${this.password}abc`
+        }
+        change_username(){
+            return `${this.username.toUpperCase()}`
+        }
+        static create_id(){
+            return `123`
+        }
+    }
+    const chai = new User('riyyan', 'riyyan@gmail.com',123)
+    console.log(chai.encrypt_password())
+    console.log(chai.change_username())
+
+    // behind the scene 
+    // a function is create with three parameters of username, email, password
+    // to add functions to it you could use prototype to make the methods available
+    // the following code does the same as for the class defined above
+    function User1(username, email, password){
+        this.username = username
+        this.email = email
+        this.password = password
+    }
+    User1.prototype.encrypt_password = function(){
+        return `${this.password}abc`
+    }
+    User1.prototype.change_username = function(){
+        return `${this.username.toUpperCase()}`
+    }
+    // now if i call the User1 method with same values the obj created should be the same 
+    const user1 = new User1('riyyan','riyyan@gmail.com',123)
+    console.log(user1.encrypt_password())
+    console.log(user1.change_username())
+    // both work the same
+    // 
+    // prototypal behavior allows for inheritance
+    // inheritance allows for one class to use the properties of another class
+    // what we did above using prototype is the type of inheritance that we just did
+    // example
+    class Teacher extends User{
+        constructor(username, email, password){
+            super(username) // the super function allows us to set username using user class constructor
+            this.email = email
+            this.password = password
+        }
+        add_course(){
+            console.log(`A new course was added by ${this.username}`)
+        }
+    }
+    const teach = new Teacher('riyyan','asdf@gamasdf','2432')
+    teach.add_course()
+    console.log(teach)
+    // 
+    // to check if an obj is created from a class use the 'instanceof' keyword
+    console.log(teach instanceof Teacher)   // True
+    console.log(teach === Teacher)          // False
+    // the obj created from inherited class is also an instance of the parent class
+    console.log(teach instanceof User)      // True
+    // if a class is inherited from another class than is it also an instance of the parent class?
+    console.log(Teacher instanceof User)    // False
+    // 
+    // If i want to create an id for a user that is unique.
+    // in some situation you want to restrict the access to a method in a class, for that reason we use the static keyword
+    const riyyan = new User('hassan','hassan@gmail.com', 123)
+    console.log(riyyan.create_id()) // does not allow user to access the function
+    // what if it is inherited by another class
+    const teach1 = new Teacher('hahaha','ha@gmail.com',3232)
+    console.log(teach1.create_id()) // does not run as it cannot be accessed
+    // static does not allow access to function in any class whether it is inherited or child or parent
+</script>
+</html>
