@@ -1,0 +1,45 @@
+Why We Need Hooks
+
+Cricket analogy to explain learning hooks: 
+just as Indian batsmen practice specific shots (like the pull shot) only when facing bouncy tracks in Australia, developers should learn hooks when they encounter specific problems that plain JavaScript cannot solve.
+Hooks are not just "more code" to learn; they are tools created for specific scenarios where the User Interface (UI) needs to stay in sync with the data (State).
+
+Setting Up the Project
+
+The project is a simple Counter Application where a value increases or decreases when buttons are clicked.
+The video uses Vite to create the project (named "02counter") because it is fast and efficient.
+Basic cleanup is done by removing unnecessary boilerplate code from App.jsx to focus on the core logic.
+
+The Main Problem: UI vs. Variables
+
+In standard JavaScript, you can create a variable (e.g., let counter = 15) and update it with a function.
+While the variable's value changes in the background (confirmed by console logs), the UI on the screen does not update automatically.
+This happens because React controls the UI. React decides when and where to update the page based on changes in "State," not just standard variable changes.
+
+Introduction to Hooks (useState)
+
+To solve the UI update problem, React provides Hooks, which are special functions.
+The most common hook is useState, which is imported from the core React library.
+Purpose: It is responsible for changing the state and making sure those changes "propagate" (show up) everywhere in the DOM (the web page).
+
+How useState Works
+
+The syntax used is: const [counter, setCounter] = useState(15).
+The first value (counter): This is the current state variable.
+The second value (setCounter): This is a function used to update the variable.
+You can set any default value inside useState(), such as a number, string, or boolean.
+Power of React: When you call the update function (setCounter), React automatically looks through the entire page and updates that variable everywhere it appears 
+without you having to write manual "get element by ID" code.
+
+Practical Implementation
+
+To increase the value, a function is created that calls setCounter(counter + 1).
+To decrease the value, another function calls setCounter(counter - 1).
+Because React is "reactive," clicking these buttons updates the value in the header, the buttons themselves, and even the footer simultaneously.
+
+Assignment and Challenges
+
+The assignment to add logic to the counter.
+Constraint 1: The value should not go below 0 (no negative numbers).
+Constraint 2: The value should not go above 20.
+The goal is for the student to practice using if/else logic within the React functions to control the state.

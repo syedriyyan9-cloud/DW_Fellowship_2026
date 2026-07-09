@@ -1,0 +1,44 @@
+The Goal of the Video
+
+The main objective is to build a "Custom React"—a mini version of the library—to understand how it works "under the hood".
+By building it from scratch, you can gain confidence and realize that React is not "magic" but a logical set of JavaScript instructions.
+
+How React Sees the UI (The Object Tree)
+
+React does not see HTML the same way we write it. It converts every element into a JavaScript object (a tree structure).
+A basic React element object contains:
+Type: The HTML tag (e.g., 'a', 'div', 'p').
+Props: An object containing attributes like href, target, or className.
+Children: The text or other elements inside that tag.
+
+Building a Custom Render Method
+
+To make a custom React work, you need a render method that takes your element object and puts it into the browser's DOM.
+The Process:
+Create a DOM element using document.createElement based on the element's type.
+Add the text content using innerHTML from the children property.
+Set attributes (like href) by looping through the props object using a for...in loop to make the code modular and reusable.
+Finally, use appendChild to inject this new element into the main "root" container.
+
+Understanding JSX and Bundlers
+
+JSX is not HTML: Browsers cannot understand code like <h1>Hello</h1> inside a JavaScript file.
+The Bundler’s Job: Tools like Babel or the bundlers used in Vite take your JSX code and "transpile" (convert) it into the object tree structure mentioned above so React can process it.
+Components are Functions: React components are essentially just JavaScript functions that return JSX.
+
+The React.createElement Method
+
+In real React, the bundler automatically converts your JSX into a method call: React.createElement().
+The Syntax: It expects specific arguments in order: the tag name, the props object, the children (text), and finally, any evaluated variables.
+
+Evaluated Expressions (The { } Syntax)
+
+When you use curly braces { } in React, you are inserting an "evaluated expression".
+The Rule: You can only put the final result of a piece of logic (like a variable name) inside the braces.
+Why No Logic: 
+You cannot write full JavaScript logic like if statements or for loops inside the curly braces because the final code is converted into an object, and JavaScript objects cannot contain if/else statements as property values.
+
+Exploring the Source Code
+
+The video encourages looking at the official React source code on GitHub to see how professionals handle element validation and rendering.
+This helps bridge the gap between learning a tool and understanding the engineering behind the library.

@@ -1,0 +1,41 @@
+The Main Goal: How React Injects into HTML
+
+The primary goal is to understand how a JavaScript library like React actually gets injected into an HTML page to make it work.
+JavaScript cannot manipulate a page unless it is called inside an HTML file using a <script> tag.
+
+Single Page Application (SPA) Concept
+
+React creates Single Page Applications, meaning there is usually only one index.html file for the entire website.
+Instead of loading new pages, React uses DOM manipulation to change what the user sees on that single page (e.g., swapping a "Home" view for a "Contact" view).
+
+The "Root" Element
+
+In the index.html file, there is a simple, empty <div> with an ID of "root".
+React finds this specific ID and loads your entire application inside that one div.
+
+Core Libraries and the Virtual DOM
+
+React Core: This is the foundational library that handles references and logic.
+React-DOM: This is the implementation for the web; it creates a Virtual DOM, which is a "tree structure" of your app kept in memory.
+Efficiency: React compares its Virtual DOM with the browser's real DOM and only updates the parts that have actually changed, rather than reloading everything.
+
+Components and JSX
+
+What is a Component: In React, a component is simply a JavaScript function that returns HTML code.
+Custom Tags: React allows you to create your own tags (like <App /> or <Chai />) that the browser wouldn't normally recognize, which is the power of JSX.
+Fragment Rule: A component can only return one parent element. If you want to return multiple elements, you must wrap them in a <div> or an empty tag called a Fragment (<>...</>).
+
+Important Rules and Best Practices
+
+Naming Convention: The name of a component function must start with a capital letter (e.g., Chai instead of chai), or the browser may not recognize it.
+
+File Extensions:
+
+In Vite, you should use the .jsx extension if the file contains HTML-like code.
+Use .js if the file only contains plain JavaScript logic.
+Consistent File Naming: While not always required, it is a best practice to capitalize the filename of your components (e.g., App.jsx).
+
+Comparing Vite and Create-React-App (CRA)
+
+CRA: It uses "react-scripts" to hiddenly inject the JavaScript into the HTML behind the scenes.
+Vite: It is more direct and "classic"; it explicitly places a <script> tag in the index.html that points to your main JavaScript entry point (main.jsx), making it faster and lighter.
