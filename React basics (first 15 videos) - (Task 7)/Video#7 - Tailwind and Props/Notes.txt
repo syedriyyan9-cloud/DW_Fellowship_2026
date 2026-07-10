@@ -1,0 +1,32 @@
+Tailwind CSS: Overview and Setup
+
+What is Tailwind? It is a "utility-first" CSS framework that allows you to style your website directly in your HTML/JSX using predefined classes.
+Installation with Vite:
+It requires installing dependencies like tailwindcss, postcss, and autoprefixer.
+These are installed as "Dev Dependencies" (-D) because they are only needed during development, not in the final production bundle.
+
+Configuration:
+
+You must generate a tailwind.config.js file and update the "content" section so it knows which files to scan for styles.
+You also need to add the @tailwind directives to your main CSS file (usually index.css).
+Usage in React: In JSX, you use className instead of the standard HTML class because class is a reserved keyword in JavaScript.
+Examples of Classes: You can easily add styles like bg-green-400 (green background), p-4 (padding), or rounded-xl (rounded corners).
+
+Working with Components
+
+Reusability: The main goal of React is to make code reusable. Instead of writing the same HTML for multiple "cards," you create one Card component and use it multiple times.
+Folder Structure: It is a best practice to create a separate components folder and save each component in its own .jsx file.
+JSX Rules: Unlike standard HTML, every tag in JSX must be closed (for example, an image tag must be written as <img />).
+
+Understanding Props (Properties)
+
+Definition: Props are like arguments passed into a function. They allow you to send data from a parent component (like App.jsx) to a child component (like Card.jsx).
+Passing Data: You pass data just like HTML attributes: <Card username="chai" />.
+Data Types: You can pass almost anything through props, including strings, numbers, arrays, and objects.
+Variable Injection: To pass a variable, object, or array, you must wrap it in curly braces {}.
+
+Handling Props in a Component
+
+Accessing Data: By default, a component receives an object called props. You can access specific data using dot notation, such as props.username.
+Destructuring: A more modern and common way is to "destructure" the props directly in the function parameters—for example, writing function Card({username}) instead of function Card(props).
+Default Values: You can set a default value for a prop (e.g., {btnText = "Visit Me"}). This ensures that if the person using the component forgets to pass that specific piece of data, the UI doesn't look broken or empty.

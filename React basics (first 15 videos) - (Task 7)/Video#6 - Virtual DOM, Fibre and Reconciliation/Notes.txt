@@ -1,0 +1,39 @@
+This internal working of React, which is very important for interviews and deep understanding.
+It explains concepts like the Virtual DOM, Reconciliation, and React Fiber.
+
+Virtual DOM vs. Real DOM
+
+The Browser's Real DOM is slow because every time something changes, the browser often has to repaint (rebuild) the whole page structure, which causes the page to reload.
+The Virtual DOM is a tree-like structure created in JavaScript that tracks all elements.
+React compares its Virtual DOM with the browser's Real DOM and only updates the specific parts that have changed, making the app much faster.
+The createRoot method is what React uses to build this internal DOM-like structure.
+
+What is React Fiber?
+
+React Fiber is the current engine or "core algorithm" that handles how React updates the Virtual DOM.
+It was created after two years of research to improve performance for things like animations, layouts, and gestures.
+Main Feature: It introduces Incremental Rendering, which means it can split the work into small chunks and spread them out over time instead of trying to do everything at once.
+
+Capabilities of Fiber:
+
+Pause and Resume: It can pause work and come back to it later.
+Assign Priority: It can give higher priority to important updates (like animations) and lower priority to less urgent ones.
+Abort Work: If a newer update comes in, Fiber can simply throw away the old, unnecessary update.
+
+Reconciliation
+
+Reconciliation is the actual name of the algorithm that compares two "trees" (the old UI and the new UI) to see what is different.
+While people often call it the "Virtual DOM," Reconciliation is the process that decides which parts of the page need to be replaced.
+It is a "diffing" algorithm, similar to how Git sees differences between files.
+
+Key Concepts for Performance
+
+Hydration: This is the process where JavaScript is injected into the HTML layout so that elements (like buttons) become interactive.
+Keys in Lists: When showing a list of items, using "keys" is very important. Keys must be stable, predictable, and unique so that the Fiber algorithm can efficiently track and update individual items in the list.
+State Updates: React doesn't always update the UI immediately. It can wait a brief moment to batch updates together to be more efficient.
+
+Summary of the Flow
+
+When you write code, it goes into the Virtual DOM.
+The Reconciliation algorithm (using Fiber) compares the differences.
+Finally, only the necessary changes are sent to the Real DOM to be displayed to the user.

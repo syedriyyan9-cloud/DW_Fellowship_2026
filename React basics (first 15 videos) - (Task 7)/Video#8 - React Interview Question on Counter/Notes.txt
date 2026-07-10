@@ -1,0 +1,30 @@
+The scenario starts with a simple Counter Application where one button adds a value and another removes it.
+
+The "Tricky" Question
+
+Once the basic counter is built, an interviewer might duplicate the update line several times (for example, writing setCounter(counter + 1) four times in a row).
+The question asked is: "If the current value is 15 and I click the button once, what will the new value be?".
+Most people assume the value will jump to 19 (15 + 4), but in reality, it only increases to 16.
+
+Why Does This Happen? (Batching)
+
+The reason for this behavior is Batching. React does not update the UI or the variable for every single line of code immediately.
+Instead, React (using the Fiber algorithm) groups these updates into batches to improve performance.
+Because all four lines are doing the exact same thing (using the same initial value of counter), React sees them as a single update and only executes it once.
+
+The Solution: Using a Callback Function
+
+If you actually want to update the value multiple times in one click, you cannot pass the updated value directly. Instead, you must pass a callback function to the setter method.
+The setCounter function can accept a hidden feature: a function that gives you the previous state (often called prevCounter).
+The Correct Way: You should write it as setCounter(prevCounter => prevCounter + 1).
+
+How the Callback Works
+
+When you use a callback, React ensures that the previous update is completed before starting the next one.
+It functions similarly to a "promise chain," where each step waits for the previous value to be ready.
+By using this approach, if you call the function four times, the counter will correctly increase by 4 (from 15 to 19) in a single click.
+
+Naming Best Practices
+
+While you can name the variable inside the callback anything (like counter), it is better to call it prevCounter to avoid confusion with the main state variable.
+This makes your code more readable and helps you avoid code inconsistency during an interview.
