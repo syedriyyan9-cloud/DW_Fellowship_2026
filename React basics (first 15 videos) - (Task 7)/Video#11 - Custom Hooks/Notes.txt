@@ -1,0 +1,45 @@
+Currency Converter
+
+Real-world Application: Instead of using hardcoded numbers, this project uses a live API to get real-time currency conversion rates.
+Focus on Logic: Focuses on React logic and JavaScript rather than spending time writing CSS; pre-made CSS classes are provided to focus on the engineering.
+Key Features: It includes a search/dropdown for currencies, a "swap" button to switch currencies, and an input for amounts.
+
+Building Custom Hooks
+
+Definition: A custom hook is essentially a JavaScript function that can use built-in React hooks like useState and useEffect.
+Naming Convention: It is a standard rule to start custom hook names with the word "use" (e.g., useCurrencyInfo).
+
+The useCurrencyInfo Hook:
+
+This hook fetches data from an API whenever a specific currency is selected.
+It uses useEffect to trigger the API call automatically when the component mounts or the dependency changes.
+It returns the fetched data so other components can use it.
+
+Component Reusability (InputBox)
+
+Purpose: Instead of writing code for "From" and "To" boxes separately, one reusable InputBox component is created.
+Using Props: The component accepts various properties (props) like label, amount, onAmountChange, and currencyOptions to make it flexible.
+The key Prop: When looping through a list of currencies using map(), it is vital to provide a unique "key" to every element to help React optimize performance.
+
+The useId Hook
+
+New Concept: The video introduces useId, a hook used to generate unique IDs for HTML elements.
+Accessibility: It is primarily used to link labels with input fields (using htmlFor and id), which helps with screen readers and keyboard navigation.
+Note: React documentation advises not to use useId for generating keys in a list; it should only be used for unique element identification.
+
+Advanced Project Structure
+
+Cleaner Imports: A best practice shown is creating an index.js file inside the components folder.
+Centralized Export: This file imports all individual components and exports them from one place, allowing the main application to import everything in a single, cleaner line.
+
+Application Logic in App.jsx
+
+State Management: Multiple states are tracked, including the "from" currency, "to" currency, the amount, and the final converted result.
+The Swap Function: This logic switches the values of the "from" and "to" variables, effectively swapping the conversion direction.
+The Convert Function: This calculates the final amount by multiplying the user's input by the conversion rate found in the API data.
+Handling Forms: The application uses e.preventDefault() during form submission so the page doesn't reload when the user clicks the "Convert" button.
+
+Optimization and Performance
+
+Large Lists: When dealing with very long lists of currencies, the app must be optimized so the page does not hang or lag.
+Efficiency: Using hooks like useCallback (mentioned as a concept) and correct dependency arrays in useEffect ensures the API is only called when necessary.

@@ -1,0 +1,11 @@
+import { useState, useEffect} from "react";
+
+function currencyExchange(currency){
+    const [data, setData] = useState({})
+    useEffect( () => {
+        fetch(`https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${currency}.json`)
+        .then((resolve) => resolve.json())
+        .then((resolve) => setData(resolve))
+    },[currency])
+}
+export default currencyExchange
