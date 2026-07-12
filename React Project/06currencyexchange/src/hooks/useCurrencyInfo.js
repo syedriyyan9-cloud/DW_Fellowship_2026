@@ -5,7 +5,8 @@ function currencyExchange(currency){
     useEffect( () => {
         fetch(`https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${currency}.json`)
         .then((resolve) => resolve.json())
-        .then((resolve) => setData(resolve))
+        .then((resolve) => setData(resolve[currency]))
     },[currency])
+    return data
 }
 export default currencyExchange

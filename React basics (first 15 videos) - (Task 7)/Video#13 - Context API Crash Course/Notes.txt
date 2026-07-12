@@ -1,0 +1,38 @@
+The Problem: Prop Drilling
+
+In standard React, data is passed from a parent component to a child using Props.
+Prop Drilling happens when you have a deeply nested component (like a "Card") that needs data, but you have to pass that data through many intermediate components (like "Dashboard" or "Sidebar") that don't actually use it.
+This approach is considered unoptimized because components are handling data they don't need just to move it further down the tree.
+
+The Solution: Context API
+
+The Context API allows you to create a global object or file where data is stored.
+Components can "ask" this global file for data directly, skipping the need to pass props through every level of the application.
+It is a built-in React feature designed to solve state management and synchronization problems.
+
+How Context API Works
+
+Step 1: Create Context: You use the createContext() method to initialize a new context variable.
+Step 2: Provide Context: You must wrap your components in a Provider (e.g., <UserContextProvider>). This makes the data available to every component inside that "wrapper".
+Step 3: Pass Values: The Provider has a value property where you put the data or functions you want to share (like user or setUser).
+Step 4: Consume Context: To get the data inside a component, you use the useContext hook and specify which context you are talking to.
+
+Context API vs. Other Libraries
+
+Context API: Specifically built for React and exists only within the React ecosystem.
+Redux / Redux Toolkit (RTK): A more organized but complex way to manage state, often used in very large applications.
+Zustand: Another popular and easier library for state management.
+Learning Context API makes it much easier to understand these other libraries later.
+
+Production-Grade Patterns
+
+In professional projects, developers often combine the context and provider into one single file for better organization.
+Default Values: You can set initial data (like a default theme) directly inside createContext() so the app doesn't crash if no value is provided.
+Custom Hooks: A common practice is to create a custom hook (like useTheme) that exports the context. This allows other components to get data with just one import instead of two.
+
+Practical Projects in the Video
+
+Mini Login App: A basic project where one component (Login) sends a username to the global state, and another component (Profile) displays it.
+Theme Toggler: A more advanced project using Tailwind CSS to switch the entire website between "Light Mode" and "Dark Mode".
+It uses useEffect to watch for changes in the theme state and manually update the HTML's class list (adding or removing the "dark" class).
+It highlights that in modern development, React handles the logic while CSS frameworks like Tailwind handle the visual changes.

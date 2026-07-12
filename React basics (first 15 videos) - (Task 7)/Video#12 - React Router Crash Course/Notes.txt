@@ -1,0 +1,32 @@
+Introduction to React Router
+
+Third-Party Library: React Router DOM is not a core part of React; it is a popular external library used to handle navigation.
+Focus on Functionality: Unlike simple UI clones that only look like famous websites, this project focuses on actual routing and API handling to make a functional application.
+
+Why Use Link instead of  Tags?
+
+No Page Refresh: In standard HTML, the <a> tag refreshes the entire page when clicked. In React, we want to avoid this to keep the application fast.
+The Link Component: Using the Link component allows React to inject new data into the page without a full reload.
+NavLink: This is a special version of Link that knows if it is "active." It provides an isActive variable that you can use to change the style (like changing text colour) to show the user which page they are currently on.
+
+Managing Layouts with Outlet
+
+The Problem: On most websites, the Header and Footer stay the same while only the middle content changes.
+The Solution: Instead of adding the Header and Footer to every single page, you create a Layout component.
+The Outlet Component: You place an <Outlet /> tag inside your Layout. This acts as a placeholder where the different pages (Home, About, Contact) will be swapped in and out.
+
+Two Ways to Create a Router
+
+Method 1 (Objects): You can create a router by passing an array of objects to the createBrowserRouter function.
+Method 2 (Elements): A more readable way is using createRoutesFromElements. This allows you to write your routes in a nested "tag-style" format, which many developers find easier to understand.
+
+Dynamic Routing and Parameters
+
+Variable URLs: You can create routes that accept dynamic data, such as /user/:userid. The colon (:) tells React that this part of the URL can change.
+useParams Hook: To get the data from the URL (like a specific user ID), you use the useParams hook. This allows you to show specific information based on what is in the browser's address bar.
+
+Optimising Data with Loaders
+
+Beyond useEffect: Usually, developers fetch data using useEffect after a component loads. However, React Router now offers a loader property.
+Faster Fetching: A loader starts fetching data from an API as soon as the user starts to click or hover on a link, even before the component finishes rendering.
+useLoaderData Hook: Once the data is fetched by the loader, you use the useLoaderData hook to access that information inside your component, making the app feel much faster and more optimised.

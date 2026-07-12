@@ -1,0 +1,52 @@
+Evolution of Redux
+
+History: Before Redux, there was an architecture called Flux. 
+Redux was inspired by Flux to solve problems like state management and data flow.
+Core Redux vs. Redux Toolkit (RTK): Traditional Redux was difficult to set up and required a lot of manual code. 
+Redux Toolkit is the modern way to write Redux; it comes with "batteries included," meaning it simplifies the setup and includes helpful tools automatically.
+Independence: Redux is an independent library. 
+While it is often used with React, it can also work with other frameworks like Vue or even plain JavaScript.
+
+Core Concepts
+
+The Store: This is the "Single Source of Truth". 
+It is a central place where all the application's data is stored so that any component can access it without "prop drilling".
+Reducers: These are functions that define how to change the data in the store. 
+You cannot change the state directly; it must be done through a reducer.
+Actions: These are objects that tell the reducer what to do and provide any necessary data (called the payload).
+
+Setting Up Redux Toolkit
+
+Installation: To use Redux in a React project, you need two libraries: @reduxjs/toolkit (the core logic) and react-redux (the bridge that connects Redux to React).
+Creating a Store: You use the configureStore method to create the main store and register your reducers there.
+Creating a Slice: A "slice" is a collection of logic for a specific feature (like a "Todo" list). 
+To create one, you provide:
+A name for the slice.
+An initial state (the starting data).
+The reducers (functions like addTodo or removeTodo).
+
+Key React Hooks for Redux
+
+useDispatch: This hook is used to send an action to the store. 
+For example, when a user clicks "Add," you "dispatch" the addTodo reducer to update the data.
+useSelector: This hook is used to get data from the store. 
+It allows a component to "select" exactly what piece of global state it needs.
+
+Working with Logic
+
+State and Action: Every reducer function gets access to the state (the current data) and the action (the data being passed in).
+Payload: When you send data to a reducer (like the text of a new Todo), it is found inside action.payload.
+Immutability: In old Redux, you had to be very careful not to change the state directly. 
+RTK handles this automatically, allowing you to use simple methods like .push() or .filter() to update state.
+
+Connecting to the Application
+
+The Provider: To make the Redux store available to your entire React app, you must wrap your main component (usually in main.jsx or App.jsx) with the <Provider> component.
+The Store Prop: You must pass your created store into the Provider: <Provider store={store}>.
+
+Debugging with Redux DevTools
+
+Extension: The video recommends using the Redux DevTools Chrome extension.
+Time Travel: This tool allows you to see every change made to the state in a timeline. 
+You can "jump" back and forth in time to see exactly how your application data changed after each click.
+Visibility: It helps you monitor what actions were triggered, what data was in the payload, and what the final state looked like after the update.

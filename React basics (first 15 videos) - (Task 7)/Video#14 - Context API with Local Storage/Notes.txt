@@ -1,0 +1,41 @@
+Project Overview and Goals
+
+Topic: The video focuses on building a Todo application using the Context API and Local Storage.
+Purpose: The goal is to move beyond basic theory and gain confidence by building a project that handles Business Logic (how data works) rather than just UI design.
+Features: The app allows users to add, edit, and delete tasks, as well as toggle them as "completed".
+
+Essential Features of the Todo App
+
+Persistence: Even if you refresh the browser or close the tab, the tasks remain because they are saved in the browser's Local Storage.
+Interactive UI: When a task is marked as complete, the UI uses CSS to cross it out (line-through).
+Inline Editing: Clicking "Edit" turns a text field into an input field so you can update a task without leaving the page.
+
+Setting Up the Context API
+
+Centralised Data: A TodoContext is created to store the list of tasks and the functions to manage them.
+Structure of a Todo: Every task is an object containing a unique ID, the Todo message, and a completed status (true or false).
+Custom Hook: The video demonstrates creating a custom hook called useTodo. This makes it easy for any component to access the tasks and functions without complex "prop drilling".
+
+State Management Logic
+
+Adding Tasks: When adding a task, the code uses a callback to take the existing list and "spread" it, adding a new task object at the beginning.
+Updating Tasks: To edit a task, the code uses the .map() method to find the specific task by its ID and replace its text while keeping other tasks the same.
+Deleting Tasks: To remove a task, the .filter() method is used to create a new list that excludes the task with the matching ID.
+Toggling Completion: The logic finds the correct task and flips the "completed" boolean value (from true to false or vice-versa).
+
+Working with Local Storage
+
+Fetching Data: A useEffect hook runs when the app first loads to get saved tasks from Local Storage. Because Local Storage only stores strings, the data must be converted back into a JavaScript object using JSON.parse().
+Saving Data: A second useEffect hook automatically saves the list to Local Storage whenever the tasks change. The data is converted into a string using JSON.stringify() before saving.
+
+Component Structure
+
+TodoForm: A simple input field where users type a task. It "wires up" the input to the local state and sends it to the main context when submitted.
+TodoItem: A reusable component for each individual task. It handles the specific logic for editing, deleting, and toggling that specific task.
+Rendering Lists: The main app loops through the list of tasks using .map() and provides a unique "key" (using the task's ID) to help React perform efficiently.
+
+Important Developer Tips
+
+Unique IDs: The project uses Date.now() to generate unique IDs since there is no backend database to do it automatically.
+Business Logic vs. UI: Understanding how data flows (business logic) is what actually helps you get a job, more so than just making "clones" of famous websites.
+Debugging: The video shows how to use the browser's Inspect tool to view the "Application" tab and see the tasks actually stored in Local Storage.
