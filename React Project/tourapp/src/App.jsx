@@ -1,47 +1,71 @@
-// import { useState } from 'react'
-// import './App.css'
-import {createBrowserRouter, RouterProvider} from 'react-router-dom'
-import Navbar from './components/Navbar/Navbar.jsx'
-import Home from './components/Home/Home.jsx'
-import About from './components/About/About.jsx'
-import Tours from './components/Tours/Tours.jsx'
-import Gallery from './components/Gallery/Gallery.jsx'
-import Contact from './components/Contact/Contact.jsx'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar.jsx';
+import Footer from './components/Footer/Footer.jsx'
+import HomePage from './pages/HomePage';
+import DestinationsPage from './pages/DestinaitonsPage';
+import PackagesPage from './pages/PackagesPage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 
+// Layout Component that wraps all pages
+const Layout = ({ children }) => {
+  return (
+    <div className="min-h-screen bg-cream-light">
+      <Navbar />
+      <main className="pt-16">
+        {children}
+      </main>
+      <Footer />
+    </div>
+  );
+};
 
-const router = createBrowserRouter(
-  [
-    {
-      path:'/',
-      element: <><Navbar/><Home/></>
-    },
-    {
-      path:'/tours',
-      element: <><Navbar/><Tours/></>
-    },
-    {
-      path:'/gallery',
-      element: <><Navbar/><Gallery/></>
-    },
-    {
-      path:'/about',
-      element: <><Navbar/><About/></>
-    },
-    {
-      path:'/contact',
-      element: <><Navbar/><Contact/></>
-    },
-  ]
-)
+// Create router with all routes
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: (
+      <Layout>
+        <HomePage />
+      </Layout>
+    ),
+  },
+  {
+    path: '/destinations',
+    element: (
+      <Layout>
+        <DestinationsPage />
+      </Layout>
+    ),
+  },
+  {
+    path: '/packages',
+    element: (
+      <Layout>
+        <PackagesPage />
+      </Layout>
+    ),
+  },
+  {
+    path: '/about',
+    element: (
+      <Layout>
+        <AboutPage />
+      </Layout>
+    ),
+  },
+  {
+    path: '/contact',
+    element: (
+      <Layout>
+        <ContactPage />
+      </Layout>
+    ),
+  },
+]);
 
 function App() {
-  // const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <RouterProvider router={router}/>
-    </>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
