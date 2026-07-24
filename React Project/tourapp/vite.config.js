@@ -8,4 +8,12 @@ export default defineConfig({
     tailwindcss(),
   ],
   base: '/',
+  build: {
+    outDir: 'dist',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
+  }
 })
