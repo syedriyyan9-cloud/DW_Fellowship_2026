@@ -43,7 +43,7 @@
         <div className="w-full max-w-lg rounded-2xl bg-white/90 backdrop-blur-sm shadow-2xl p-8 text-center">
             
             {/* Heading */}
-            <h1 className="text-3xl font-bold text-gray-800 mb-8">
+            <h1 className="text-3xl font-bold text-black mb-8">
             Random Color Generator
             </h1>
 
