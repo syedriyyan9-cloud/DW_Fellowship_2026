@@ -33,7 +33,6 @@
             </h1>
 
             <div className="flex items-center justify-center gap-6">
-            {/* Previous */}
             <button
                 onClick={prev}
                 className="w-14 h-14 rounded-full bg-slate-800 text-white text-2xl hover:bg-slate-700 transition duration-200"
@@ -41,14 +40,12 @@
                 ←
             </button>
 
-            {/* Image */}
             <img
                 src={images[count]}
                 alt={`Slide ${count + 1}`}
                 className="w-full max-w-2xl h-112.5 object-cover rounded-xl shadow-lg"
             />
 
-            {/* Next */}
             <button
                 onClick={next}
                 className="w-14 h-14 rounded-full bg-slate-800 text-white text-2xl hover:bg-slate-700 transition duration-200"
@@ -57,7 +54,6 @@
             </button>
             </div>
 
-            {/* Dots */}
             <div className="flex justify-center gap-3 mt-8">
             {images.map((_, index) => (
                 <div
@@ -69,7 +65,6 @@
             ))}
             </div>
 
-            {/* Counter */}
             <p className="text-center mt-4 text-slate-600 font-medium">
             {count + 1} / {images.length}
             </p>
