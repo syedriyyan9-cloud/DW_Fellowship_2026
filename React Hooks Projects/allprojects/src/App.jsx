@@ -4,6 +4,8 @@ import StarRating from "./components/star_rating/StarRating.jsx"
 import SlidingWindow from "./components/sliding_window/SlidingWindow.jsx"
 import SlidingWindowUsingFetch from "./components/sliding_window/SlidingWindowUsingFetch.jsx";
 import LoadMore from "./components/load_more/LoadMore.jsx";
+import TreeMenu from "./components/tree_menu/TreeMenu.jsx"
+import QRcode from "./components/qr_code/QRcode.jsx"
 
 
 function App() {
@@ -31,6 +33,14 @@ function App() {
       
       <section>
         <LoadMore limit={100} />
+      </section>
+
+      {/* <section>
+        <TreeMenu />
+      </section> */}
+
+      <section>
+        <QRcode />
       </section>
     </div>
   );
