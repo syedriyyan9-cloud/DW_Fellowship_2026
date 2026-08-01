@@ -7,6 +7,8 @@ import LoadMore from "./components/load_more/LoadMore.jsx";
 import TreeMenu from "./components/tree_menu/TreeMenu.jsx"
 import QRcode from "./components/qr_code/QRcode.jsx"
 import ThemeChange from "./components/theme_change/ThemeChange.jsx"
+import TabsData from "./components/tabs/TabsData.jsx"
+import Tabs from "./components/tabs/Tabs.jsx";
 
 
 function App() {
@@ -46,6 +48,14 @@ function App() {
      
       <section>
         <ThemeChange />
+      </section>
+
+      <section>
+        {/* <Infinite_Scroll /> */}
+      </section>
+
+      <section>
+        <Tabs data={TabsData}/>
       </section>
     </div>
   );
