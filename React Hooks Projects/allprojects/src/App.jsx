@@ -9,6 +9,9 @@ import QRcode from "./components/qr_code/QRcode.jsx"
 import ThemeChange from "./components/theme_change/ThemeChange.jsx"
 import TabsData from "./components/tabs/TabsData.jsx"
 import Tabs from "./components/tabs/Tabs.jsx";
+import Modal_Temp from "./components/modal_template/Modal_Temp.jsx"
+import GithubProfileFinder from "./components/github_profile_finder/GithubProfileFinder.jsx"
+
 
 
 function App() {
@@ -45,7 +48,7 @@ function App() {
       <section>
         <QRcode />
       </section>
-     
+
       <section>
         <ThemeChange />
       </section>
@@ -56,6 +59,14 @@ function App() {
 
       <section>
         <Tabs data={TabsData}/>
+      </section>
+        <p>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+      <section>
+        <Modal_Temp  header={"Header"} body={"Body"} footer={"Footer"}/>
+      </section>
+
+      <section>
+        <GithubProfileFinder />
       </section>
     </div>
   );
