@@ -11,7 +11,7 @@ import TabsData from "./components/tabs/TabsData.jsx"
 import Tabs from "./components/tabs/Tabs.jsx";
 import Modal_Temp from "./components/modal_template/Modal_Temp.jsx"
 import GithubProfileFinder from "./components/github_profile_finder/GithubProfileFinder.jsx"
-
+import SearchAutoComplete from "./components/search_autocomplete/SearchAutoComplete.jsx";
 
 
 function App() {
@@ -67,6 +67,10 @@ function App() {
 
       <section>
         <GithubProfileFinder />
+      </section>
+      
+      <section>
+        <SearchAutoComplete />
       </section>
     </div>
   );
