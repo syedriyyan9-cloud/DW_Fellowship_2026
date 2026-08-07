@@ -13,6 +13,7 @@ import Modal_Temp from "./components/modal_template/Modal_Temp.jsx"
 import GithubProfileFinder from "./components/github_profile_finder/GithubProfileFinder.jsx"
 import SearchAutoComplete from "./components/search_autocomplete/SearchAutoComplete.jsx";
 import TicTacToe from "./components/tic_tac_toe/TicTacToe.jsx"
+import FeatureFlag from "./components/featureFlag/FeatureFlag.jsx";
 
 function App() {
   return (
@@ -75,6 +76,10 @@ function App() {
 
       <section>
         <TicTacToe />
+      </section>
+
+      <section>
+        <FeatureFlag />
       </section>
     </div>
   );
