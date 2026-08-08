@@ -1,4 +1,5 @@
 import { useState } from "react";
+import dummyApiResponse from "../featureFlag/data.js";
 
 function Tabs(props) {
     const [buttonActive, setButtonActive] = useState(-1);

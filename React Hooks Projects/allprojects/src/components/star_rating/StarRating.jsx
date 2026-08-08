@@ -1,4 +1,5 @@
 import { useState } from "react";
+import dummyApiResponse from "../featureFlag/data.js";
 
 function StarRating() {
     const [star, setStar] = useState([

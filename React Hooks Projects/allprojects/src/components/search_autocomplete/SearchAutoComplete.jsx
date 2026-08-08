@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import dummyApiResponse from "../featureFlag/data.js";
 
 function SearchAutoComplete() {
     const [users, setUsers] = useState([]);

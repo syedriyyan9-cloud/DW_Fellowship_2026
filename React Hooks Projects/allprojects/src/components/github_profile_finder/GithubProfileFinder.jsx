@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import dummyApiResponse from "../featureFlag/data.js";
 
 function GithubProfileFinder() {
 const [user, setUser] = useState(null);

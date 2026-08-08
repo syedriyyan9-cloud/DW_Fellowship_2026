@@ -54,9 +54,9 @@ function App() {
         <ThemeChange />
       </section>
 
-      <section>
-        {/* <Infinite_Scroll /> */}
-      </section>
+      {/* <section>
+        <Infinite_Scroll />
+      </section> */}
 
       <section>
         <Tabs data={TabsData}/>
@@ -78,9 +78,9 @@ function App() {
         <TicTacToe />
       </section>
 
-      <section>
+      {/* <section>
         <FeatureFlag />
-      </section>
+      </section> */}
     </div>
   );
 }

@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import data from "./data.js";
+import dummyApiResponse from "../featureFlag/data.js";
 
 function Accordian() {
   const [select, setSelect] = useState(null);
   const [enable, setEnable] = useState(false);
   const [multiple, setMultiple] = useState([]);
+  const [loading, setLoading] = useState(dummyApiResponse.accordian)
+
+  useEffect(() => {
+    setLoading(!loading)
+  }, [dummyApiResponse.accordian])
 
   function handleQuestions(currId) {
     setSelect(select === currId ? null : currId);
@@ -25,6 +31,10 @@ function Accordian() {
     }
 
     setMultiple(cpyarr);
+  }
+
+  if(loading){
+    return(<div></div>)
   }
 
   return (
