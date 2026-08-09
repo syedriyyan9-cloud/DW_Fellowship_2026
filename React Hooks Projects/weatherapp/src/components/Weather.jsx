@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 function Weather() {
+    const apiKey = import.meta.env.VITE_API_KEY
     const [city, setCity] = useState("Lahore");
     const [data, setData] = useState("");
     const [loading, setLoading] = useState(true);
@@ -10,7 +11,7 @@ function Weather() {
 
     useEffect(() => {
         fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${import.meta.env.VITE_API_KEY}&units=metric`
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
         )
             .then((response) => {
                 if (!response.ok) {
