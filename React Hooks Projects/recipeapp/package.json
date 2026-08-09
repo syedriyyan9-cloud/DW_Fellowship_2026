@@ -1,11 +1,11 @@
 {
-  "name": "allprojects",
+  "name": "recipeapp",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "chmod +x node_modules/.bin/vite && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -13,7 +13,6 @@
     "@tailwindcss/vite": "^4.3.3",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "react-qr-code": "^2.2.0",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
