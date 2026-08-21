@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react"
-
+import { useEffect, useState, useContext } from "react"
+import { CartContext } from "./CartProvider.jsx";
 
 function Items(){
 
     const [loading, setLoading] = useState(true)
     const [data, setData] = useState([])
+    const { addToCart } = useContext(CartContext);
 
     useEffect(()=>{
         fetch("https://dummyjson.com/products?limit=30")
@@ -33,7 +34,9 @@ function Items(){
                 <div>
                     <img src={item.images} alt={item.images} />
                     <p>{item.description}</p>
-                    {/* <button onClick={() => addToCart(item.id)}>Add item to cart</button> */}
+                    <button onClick={() => addToCart(product)}>
+                        Add to Cart
+                    </button>
                 </div>
             )}
         </div>

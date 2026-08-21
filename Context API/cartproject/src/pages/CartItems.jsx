@@ -1,12 +1,23 @@
 
 import Nav from "../components/Nav.jsx"
+import { CartContext } from "../components/CartProvider.jsx";
+import { useContext } from "react";
 
+function CartItems() {
 
-function CartItems(){
-    return(
+    const { cart, removeFromCart } = useContext(CartContext);
+    return (
         <div>
             <Nav />
-            CartItems
+            {cart.map((product) => (
+                <div key={product.id}>
+                    <h3>{product.title}</h3>
+
+                    <button onClick={() => removeFromCart(product.id)}>
+                        Remove
+                    </button>
+                </div>
+            ))}
         </div>
     )
 }
