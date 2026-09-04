@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: "false" }));
 app.get("/users", (req, res) => {
   const html = `
   <ul>
-  ${users.map((user) => `<li>${user.first_name}`).join("")}</li>
+  ${users.map((user) => `<li>${user.first_name}</li>`).join("")}
   </ul>
   `;
   return res.send(html);
@@ -45,29 +45,20 @@ app
     // TODO: Edit the user with id
     const id = Number(req.params.id);
     const body = req.body;
-    let user = users.find((user) => user.id === id);
-    let filterUser = users.filter((user) => user.id !== id);
-    user = { id: id, ...body };
-    filterUser.push(user);
-    fs.writeFile(
-      "./MOCK_DATA.json",
-      JSON.stringify(filterUser),
-      (err, data) => {
-        return res.json({ status: "success" });
-      },
-    );
+    let userindex = users.findIndex((user) => user.id === id);
+    users[userindex] = { id: id, ...body };
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
+      return res.json({ status: "success" });
+    });
   })
   .delete((req, res) => {
     // TODO: Delete the user with id
     const id = Number(req.params.id);
-    const filterUsers = users.filter((user) => user.id !== id);
-    fs.writeFile(
-      "./MOCK_DATA.json",
-      JSON.stringify(filterUsers),
-      (err, data) => {
-        return res.json({ status: "Success" });
-      },
-    );
+    const userindex = users.findIndex((user) => user.id === id);
+    users.splice(userindex, 1);
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
+      return res.json({ status: "Success" });
+    });
   });
 
 // app.get("/api/users/:id", (req, res) => {
