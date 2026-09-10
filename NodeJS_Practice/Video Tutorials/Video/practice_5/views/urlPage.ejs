@@ -8,7 +8,7 @@
 <body>
     <h1>URL SHORTNER</h1>
     <br>
-    <form action="/" method="post">
+    <form action="/url" method="post">
         <label>Enter URL: </label>
         <input type="text" required placeholder="https://google.com" name="originalUrl">
         <button type="submit">Submit</button>
@@ -18,7 +18,7 @@
     <% links.forEach(obj => { %> 
       <li> 
         <p>Original URL: <%=obj.originalUrl%></p> 
-        <p>Short URL: <%= obj.shortUrl %></p>
+        <p>Short URL: http://localhost:8000/url/<%= obj.shortUrl %></p>
         Clicks: <%= obj.clicks %> 
       </li> 
     <% }) %> 
