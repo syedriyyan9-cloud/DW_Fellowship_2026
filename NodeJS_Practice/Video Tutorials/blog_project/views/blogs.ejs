@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Blogs</title>
+</head>
+
+<body>
+    <% if (!blogs || blogs.length===0) { %>
+        <h2>No blogs to show</h2>
+        <% } else { %>
+            <% blogs.forEach(element=> { %>
+                <h2>
+                    <%= element.title %>
+                </h2>
+                <p>
+                    <%= element.body %>
+                </p>
+                <small>
+                    <%= element.author %>
+                </small>
+                <% }) %>
+                    <% } %>
+
+</body>
+
+</html>
