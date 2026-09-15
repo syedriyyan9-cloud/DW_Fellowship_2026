@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Blogs</title>
-  </head>
-  <body>
-    <h1>Your Blogs</h1>
-    <% if (!blogs) { %>
-     <h2>You do not have any blogs yet</h2>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Blogs</title>
+</head>
+
+<body>
+  <h1>Your Blogs</h1>
+  <a href="/blogs">All Blogs</a>
+  <a href="/blogs/blogForm">Create Your Blog</a>
+  <br>
+  <% if (!blogs) { %>
+    <h2>You do not have any blogs yet</h2>
     <% } %>
-    <% if (blogs) { %>
-     <% blogs.forEach(element => { %>
-      <%= element.title %><br>
-      <%= element.author.name %><br>
-      <%= element.body %><br>
-      <%= element.createdAt %>
-     <% }) %>
-    <% } %>
-  </body>
+      <% if (blogs) { %>
+        <% blogs.forEach(element=> { %>
+          <%= element.title %><br>
+            <%= element.author.name %><br>
+              <%= element.body %><br>
+                <%= element.createdAt %>
+                  <a href="/blogs/update/<%= element._id %>">Edit</a>
+                  <a href="/blogs/delete/<%= element._id %>">Delete</a>
+                  <% }) %>
+                    <% } %>
+</body>
+
 </html>

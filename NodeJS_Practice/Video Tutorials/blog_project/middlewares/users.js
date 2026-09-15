@@ -7,7 +7,7 @@ function authenticateUser(req, res, next) {
     if (!user) return res.send("User Not Found");
     req.user = user;
   } catch (err) {
-    return res.send("Signup or login before continuing.");
+    return res.render("signuporlogin");
   }
   next();
 }

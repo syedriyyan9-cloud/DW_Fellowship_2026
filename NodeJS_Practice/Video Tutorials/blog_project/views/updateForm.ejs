@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Blog</title>
+  </head>
+  <body>
+    <form action="/blogs/update" method="post">
+      <label>Title: </label>
+      <input type="text" name="title" placeholder="how to win in chess" />
+      <br />
+      <label>Content: </label>
+      <br />
+      <textarea
+        rows="15"
+        cols="50"
+        name="content"
+        placeholder="enter your content here"
+      ></textarea>
+      <br />
+      <input type="hidden" name="id" value="<%= id %>" />
+      <button type="submit">Edit Blog</button>
+    </form>
+  </body>
+</html>

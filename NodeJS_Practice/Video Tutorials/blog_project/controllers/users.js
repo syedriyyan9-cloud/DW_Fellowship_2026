@@ -6,7 +6,7 @@ async function handleSignup(req, res) {
   const user = await User.create({ name, email, password });
   const token = setUser(user);
   res.cookie("uid", token);
-  return res.redirect("/");
+  return res.redirect("/blogs");
 }
 
 async function handleLogin(req, res) {
@@ -15,7 +15,7 @@ async function handleLogin(req, res) {
   if (!user) return res.send("No user found");
   const token = setUser(user);
   res.cookie("uid", token);
-  return res.redirect("/");
+  return res.redirect("/blogs");
 }
 
 module.exports = {
