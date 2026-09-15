@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Blogs</title>
+  </head>
+  <body>
+    <h1>Your Blogs</h1>
+    <% if (!blogs) { %>
+     <h2>You do not have any blogs yet</h2>
+    <% } %>
+    <% if (blogs) { %>
+     <% blogs.forEach(element => { %>
+      <%= element.title %><br>
+      <%= element.author.name %><br>
+      <%= element.body %><br>
+      <%= element.createdAt %>
+     <% }) %>
+    <% } %>
+  </body>
+</html>

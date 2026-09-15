@@ -11,7 +11,7 @@ async function handleSignup(req, res) {
 
 async function handleLogin(req, res) {
   const { email, password } = req.body;
-  const user = await User.find({ email: email, password: password });
+  const user = await User.findOne({ email: email, password: password });
   if (!user) return res.send("No user found");
   const token = setUser(user);
   res.cookie("uid", token);

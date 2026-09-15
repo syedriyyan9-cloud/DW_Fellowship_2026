@@ -8,6 +8,8 @@
 </head>
 
 <body>
+    <a href="/blogs/blogForm">Create Your Blog</a>
+    <a href="/blogs/userBlogs">Your Blogs</a>
     <% if (!blogs || blogs.length===0) { %>
         <h2>No blogs to show</h2>
         <% } else { %>
@@ -19,11 +21,10 @@
                     <%= element.body %>
                 </p>
                 <small>
-                    <%= element.author %>
+                    <%= element.author.name %>
                 </small>
                 <% }) %>
                     <% } %>
-
 </body>
 
 </html>

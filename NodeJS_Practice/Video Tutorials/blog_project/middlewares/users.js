@@ -4,11 +4,10 @@ function authenticateUser(req, res, next) {
   try {
     const { uid } = req.cookies;
     const user = getUser(uid);
-    console.log(user);
     if (!user) return res.send("User Not Found");
     req.user = user;
   } catch (err) {
-    console.log(err);
+    return res.send("Signup or login before continuing.");
   }
   next();
 }

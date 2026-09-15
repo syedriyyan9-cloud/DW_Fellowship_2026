@@ -1,5 +1,6 @@
 const express = require("express");
 const connect = require("./connection");
+const cookie = require("cookie-parser");
 const app = express();
 const staticRouter = require("./routes/staticurl");
 const usersRouter = require("./routes/users");
@@ -10,6 +11,7 @@ connect("mongodb://127.0.0.1:27017/blogs");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cookie());
 app.set("view engine", "ejs");
 app.set("views", "./views");
 

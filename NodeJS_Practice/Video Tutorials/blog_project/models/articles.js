@@ -4,13 +4,16 @@ const blogSchema = mongoose.Schema(
   {
     title: {
       type: String,
+      required: true,
     },
     body: {
       type: String,
+      required: true,
     },
     author: {
       type: mongoose.Schema.ObjectId,
-      unique: true,
+      ref: "users",
+      required: true,
     },
   },
   { timestamps: true },
