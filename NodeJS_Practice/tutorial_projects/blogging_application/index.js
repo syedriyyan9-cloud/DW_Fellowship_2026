@@ -2,6 +2,10 @@ const express = require("express");
 const path = require("path");
 const userRoute = require("./routes/user");
 const connectToDb = require("./connectToDb");
+const cookieParser = require("cookie-parser");
+const {
+  checkForAuthenticationCookie,
+} = require("./middlewares/authentication");
 
 const app = express();
 const PORT = 8000;
@@ -9,13 +13,17 @@ const PORT = 8000;
 connectToDb("mongodb://127.0.0.1:27017/blogify");
 
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(checkForAuthenticationCookie("token"));
 
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));
 
 app.use("/", userRoute);
 app.get("/", (req, res) => {
-  return res.render("home");
+  return res.render("home", {
+    user: req.user,
+  });
 });
 
 app.listen(PORT, () => console.log(`Server started at ${PORT}`));
