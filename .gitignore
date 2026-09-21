@@ -15,5 +15,7 @@ NodeJS_Practice/Video Tutorials/video#28/node_modules/
 NodeJS_Practice/Video Tutorials/url_shortner/node_modules/
 NodeJS_Practice/Video Tutorials/blog_project/node_modules/
 NodeJS_Practice/tutorial_projects/blogging_application/node_modules/
+NodeJS_Practice/tutorial_projects/blogging_application/public/
+
 
 .gitignore
