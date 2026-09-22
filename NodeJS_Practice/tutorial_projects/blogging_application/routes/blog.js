@@ -22,13 +22,22 @@ router.get("/add-new", (req, res) => {
   });
 });
 
+router.get("/:id", async (req, res) => {
+  const id = req.params.id;
+  const blog = await Blog.findById(id);
+  return res.render("blog", {
+    user: req.user,
+    blog,
+  });
+});
+
 router.post("/", upload.single("coverImage"), async (req, res) => {
   const { title, body } = req.body;
-  await Blog.create({
+  const blog = await Blog.create({
     body,
     title,
     createBy: req.user._id,
-    coverImageURL: `uploads/${req.file.filename}`,
+    coverImageURL: `/uploads/${req.file.filename}`,
   });
   return res.redirect(`/blog/${blog._id}`);
 });
