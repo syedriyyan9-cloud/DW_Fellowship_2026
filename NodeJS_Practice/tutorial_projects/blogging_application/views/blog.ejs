@@ -13,6 +13,13 @@
       <img src="<%= blog.coverImageURL %>" alt="Image" width="700px" />
       <pre><%= blog.body %></pre>
     </div>
+    <div class="container">
+      <img
+        src="<%= blog.createdBy.profileImageUrl %>"
+        width="100px"
+        alt=""
+      /><%= blog.createdBy.fullName %>
+    </div>
 
     <%- include("./partials/scripts") %>
   </body>

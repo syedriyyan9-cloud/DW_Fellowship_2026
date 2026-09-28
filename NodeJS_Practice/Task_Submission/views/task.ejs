@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% task.forEach((task, index) => { %>
+     <p> <%= index+1 %>: Task => <%= task.name %></p>
+     <p>Task ID: <%= task._id %></p>
+     <p>Created By: <%= task.createdBy.name %></p>
+     <hr>
+    <% }) %>
+    <form action="/task/addTask" method="post">
+        <label>Add Task: </label>
+        <input type="text" required name="task">
+        <button type="submit">Add task</button>
+    </form>
+</body>
+</html>
